@@ -60,7 +60,10 @@ reg OuOcount = 3'b000;
 				else if(marquee == 12'b011110000000) marquee <= State_09;
 				else if(marquee == 12'b011100000000) marquee <= State_10;
 				else if(marquee == 12'b011000000000) marquee <= State_11;
-				else if(marquee == 12'b010000000000) marquee <= State_12; modeCtrl <= 3'b001; //go to next Mode //QAQ defeat
+				else if(marquee == 12'b010000000000) begin
+					marquee <= State_12;
+					//modeCtrl <= 3'b001; //go to next Mode //QAQ defeat
+				end
 				else begin //Mode 000 left shift
 					marquee[11:1] <= marquee[10:0];
 					marquee[0] <= marquee[11];
@@ -69,12 +72,30 @@ reg OuOcount = 3'b000;
 			
 			//Mode 001
 			else if(modeCtrl == 3'b001) begin
-				if(marquee == State_12) marquee <= 12'b111111111111; OuO <= 1'b0; //init
-				//else if(marquee == 12'b111111111111 && OuO == 1'b0) marquee <= 12'b101010101010; OuO <= 1'b1;
-				//else if(marquee == 12'b101010101010)                marquee <= 12'b111111111111; OuOcount <= OuOcount+1;
-				//else if(marquee == 12'b111111111111 && OuO == 1'b1) marquee <= 12'b010101010101; OuO <= 1'b0;
-				//else if(marquee == 12'b010101010101)                marquee <= 12'b111111111111; OuOcount <= OuOcount+1;//OuOcount++ until 7
-				//else marquee <= 12'b111111111111; OuO <= 1'b0; //init
+				if(marquee == State_12) begin
+					marquee <= 12'b111111111111;
+					OuO <= 1'b0; //init
+				end
+				else if(marquee == 12'b111111111111 && OuO == 1'b0) begin
+					marquee <= 12'b101010101010;
+					OuO <= 1'b1;
+				end
+				else if(marquee == 12'b101010101010) begin
+					marquee <= 12'b111111111111; 
+					OuOcount <= OuOcount+1; //OuOcount++ until 7
+				end
+				else if(marquee == 12'b111111111111 && OuO == 1'b1) begin
+					marquee <= 12'b010101010101; 
+					OuO <= 1'b0;
+				end
+				else if(marquee == 12'b010101010101) begin
+					marquee <= 12'b111111111111;
+					OuOcount <= OuOcount+1; //OuOcount++ until 7
+				end
+				else  begin
+					marquee <= 12'b111111111111;
+					OuO <= 1'b0; //init
+				end
 			end //Mode 001
 			
 			//Mode 002

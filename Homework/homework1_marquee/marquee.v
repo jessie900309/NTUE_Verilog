@@ -62,7 +62,7 @@ reg OuOcount = 3'b000;
 				else if(marquee == 12'b011000000000) marquee <= State_11;
 				else if(marquee == 12'b010000000000) begin
 					marquee <= State_12;
-					//modeCtrl <= 3'b001; //go to next Mode //QAQ defeat
+					modeCtrl <= 3'b001; //go to next Mode //QAQ defeat
 				end
 				else begin //Mode 000 left shift
 					marquee[11:1] <= marquee[10:0];
@@ -92,15 +92,18 @@ reg OuOcount = 3'b000;
 					marquee <= 12'b111111111111;
 					OuOcount <= OuOcount+1; //OuOcount++ until 7
 				end
-				else marquee <= 12'b111111111111; OuO <= 1'b0; //init
+				else  begin
+					marquee <= 12'b111111111111;
+					OuO <= 1'b0; //init
+				end
 			end //Mode 001
 			
 			//Mode 002
-			//else if(modeCtrl == 3'b010) begin
+			else if(modeCtrl == 3'b010) begin
 				
 				// pu ji pu ji OuO!!!
 				
-			//end //Mode 002
+			end //Mode 002
 			
 		end //else
 	end //always @(posedge clk1, negedge reset)

@@ -1,0 +1,6 @@
+
+State Machine - |marquee|modeCtrl
+Name modeCtrl.000 modeCtrl.010 modeCtrl.001 
+modeCtrl.000 0 0 0 
+modeCtrl.001 1 0 1 
+modeCtrl.010 1 1 0 

@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Sun Oct 17 00:01:49 2021
+Analysis & Synthesis Status : Successful - Sun Oct 17 00:13:35 2021
 Quartus II Version : 8.1 Build 163 10/28/2008 SJ Web Edition
 Revision Name : marquee
 Top-level Entity Name : marquee
 Family : MAX II
-Total logic elements : 95
+Total logic elements : 128
 Total pins : 14
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
