@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM570T144) Path("D:/shapa/hw01/") File("marquee.pof") MfrSpec(OpMask(1) SEC_Device(EPM570T144) Child_OpMask(2 1 1));
+		Device PartName(EPM570T144) Path("D:/shapa/homework1_marquee/") File("marquee.pof") MfrSpec(OpMask(1) SEC_Device(EPM570T144) Child_OpMask(2 1 1));
 
 ChainEnd;
 
