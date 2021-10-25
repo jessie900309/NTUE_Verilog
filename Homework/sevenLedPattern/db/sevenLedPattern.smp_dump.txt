@@ -1,0 +1,11 @@
+
+State Machine - |sevenLedPattern|num
+Name num.111 num.110 num.101 num.100 num.011 num.010 num.001 num.000 
+num.000 0 0 0 0 0 0 0 0 
+num.001 0 0 0 0 0 0 1 1 
+num.010 0 0 0 0 0 1 0 1 
+num.011 0 0 0 0 1 0 0 1 
+num.100 0 0 0 1 0 0 0 1 
+num.101 0 0 1 0 0 0 0 1 
+num.110 0 1 0 0 0 0 0 1 
+num.111 1 0 0 0 0 0 0 1 
