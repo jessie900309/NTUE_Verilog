@@ -1,0 +1,357 @@
+Analysis & Synthesis report for sevenLedPattern
+Thu Oct 28 09:43:41 2021
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |sevenLedPattern|num
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                          ;
++-----------------------------+-----------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Oct 28 09:43:41 2021   ;
+; Quartus II Version          ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
+; Revision Name               ; sevenLedPattern                         ;
+; Top-level Entity Name       ; sevenLedPattern                         ;
+; Family                      ; MAX II                                  ;
+; Total logic elements        ; 202                                     ;
+; Total pins                  ; 13                                      ;
+; Total virtual pins          ; 0                                       ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                           ;
++-----------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EPM570T144C5       ;                    ;
+; Top-level entity name                                          ; sevenLedPattern    ; sevenLedPattern    ;
+; Family name                                                    ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Perform gate-level register retiming                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; sevenLedPattern.v                ; yes             ; User Verilog HDL File  ; D:/shapaOuO/sevenLedPattern/sevenLedPattern.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 202   ;
+;     -- Combinational with no register       ; 121   ;
+;     -- Register only                        ; 13    ;
+;     -- Combinational with a register        ; 68    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 108   ;
+;     -- 3 input functions                    ; 40    ;
+;     -- 2 input functions                    ; 32    ;
+;     -- 1 input functions                    ; 8     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 177   ;
+;     -- arithmetic mode                      ; 25    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 26    ;
+;     -- asynchronous clear/load mode         ; 77    ;
+;                                             ;       ;
+; Total registers                             ; 81    ;
+; Total logic cells in carry chains           ; 26    ;
+; I/O pins                                    ; 13    ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 78    ;
+; Total fan-out                               ; 874   ;
+; Average fan-out                             ; 4.07  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |sevenLedPattern           ; 202 (202)   ; 81           ; 0          ; 13   ; 0            ; 121 (121)    ; 13 (13)           ; 68 (68)          ; 26 (26)         ; 0 (0)      ; |sevenLedPattern    ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |sevenLedPattern|num                                                    ;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+
+; Name    ; num.111 ; num.110 ; num.101 ; num.100 ; num.011 ; num.010 ; num.001 ; num.000 ;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+
+; num.000 ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; num.001 ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; num.010 ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; num.011 ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; num.100 ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 1       ;
+; num.101 ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; num.110 ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; num.111 ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; clkCNT[21..25]                         ; Stuck at GND due to stuck port data_in ;
+; clkCNT[16..17]                         ; Stuck at VCC due to stuck port data_in ;
+; clkCNT[10..11,13,15]                   ; Stuck at GND due to stuck port data_in ;
+; clkCNT[9]                              ; Stuck at VCC due to stuck port data_in ;
+; clkCNT[8]                              ; Stuck at GND due to stuck port data_in ;
+; clkCNT[6]                              ; Stuck at VCC due to stuck port data_in ;
+; clkCNT[0..3,5]                         ; Stuck at GND due to stuck port data_in ;
+; clkCNT[4]                              ; Merged with clkCNT[7]                  ;
+; clkCNT[7]                              ; Merged with clkCNT[12]                 ;
+; clkCNT[12]                             ; Merged with clkCNT[20]                 ;
+; clkCNT[14]                             ; Merged with clkCNT[18]                 ;
+; clkCNT[18]                             ; Merged with clkCNT[19]                 ;
+; clkCNT[19]                             ; Merged with clkCNT[20]                 ;
+; q[0][3]                                ; Merged with q[0][5]                    ;
+; q[0][4]                                ; Merged with q[0][5]                    ;
+; q[1][4]                                ; Merged with q[1][5]                    ;
+; q[1][0]                                ; Merged with q[1][5]                    ;
+; q[2][4]                                ; Merged with q[2][5]                    ;
+; q[2][3]                                ; Merged with q[2][5]                    ;
+; q[3][4]                                ; Merged with q[3][5]                    ;
+; q[3][0]                                ; Merged with q[3][5]                    ;
+; q[4][4]                                ; Merged with q[4][5]                    ;
+; q[4][3]                                ; Merged with q[4][5]                    ;
+; q[5][0]                                ; Merged with q[5][5]                    ;
+; q[5][4]                                ; Merged with q[5][5]                    ;
+; q[6][4]                                ; Merged with q[6][5]                    ;
+; q[6][3]                                ; Merged with q[6][5]                    ;
+; q[7][0]                                ; Merged with q[7][5]                    ;
+; num~380                                ; Lost fanout                            ;
+; num~381                                ; Lost fanout                            ;
+; num~382                                ; Lost fanout                            ;
+; Total Number of Removed Registers = 43 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 81    ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 77    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; q[4][0]                                 ; 4       ;
+; q[2][0]                                 ; 4       ;
+; q[0][0]                                 ; 6       ;
+; q[6][0]                                 ; 4       ;
+; q[1][5]                                 ; 3       ;
+; q[3][5]                                 ; 3       ;
+; q[5][5]                                 ; 5       ;
+; q[7][5]                                 ; 3       ;
+; q[3][1]                                 ; 3       ;
+; q[5][1]                                 ; 4       ;
+; q[1][1]                                 ; 3       ;
+; q[7][1]                                 ; 6       ;
+; q[2][1]                                 ; 5       ;
+; q[4][1]                                 ; 5       ;
+; q[0][1]                                 ; 5       ;
+; q[6][1]                                 ; 5       ;
+; q[3][2]                                 ; 5       ;
+; q[5][2]                                 ; 5       ;
+; q[1][2]                                 ; 6       ;
+; q[7][2]                                 ; 6       ;
+; q[4][2]                                 ; 4       ;
+; q[2][2]                                 ; 4       ;
+; q[0][2]                                 ; 6       ;
+; q[6][2]                                 ; 4       ;
+; q[5][3]                                 ; 4       ;
+; q[3][3]                                 ; 4       ;
+; q[1][3]                                 ; 5       ;
+; q[7][3]                                 ; 3       ;
+; q[4][5]                                 ; 4       ;
+; q[2][5]                                 ; 4       ;
+; q[0][5]                                 ; 5       ;
+; q[6][5]                                 ; 4       ;
+; q[7][4]                                 ; 4       ;
+; q[3][6]                                 ; 4       ;
+; q[5][6]                                 ; 5       ;
+; q[1][6]                                 ; 5       ;
+; q[7][6]                                 ; 6       ;
+; q[4][6]                                 ; 5       ;
+; q[2][6]                                 ; 5       ;
+; q[0][6]                                 ; 15      ;
+; q[6][6]                                 ; 5       ;
+; clkCNT[20]                              ; 4       ;
+; Total number of inverted registers = 42 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |sevenLedPattern|q[0][6]   ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |sevenLedPattern|q[7][6]   ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[1][1]   ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[2][1]   ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[3][1]   ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[4][0]   ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[5][5]   ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[6][1]   ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |sevenLedPattern|Mux0      ;
+; 30:1               ; 8 bits    ; 160 LEs       ; 40 LEs               ; 120 LEs                ; No         ; |sevenLedPattern|num~175   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Thu Oct 28 09:43:41 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sevenLedPattern -c sevenLedPattern
+Info: Found 1 design units, including 1 entities, in source file sevenLedPattern.v
+    Info: Found entity 1: sevenLedPattern
+Info: Elaborating entity "sevenLedPattern" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at sevenLedPattern.v(23): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at sevenLedPattern.v(152): truncated value with size 32 to match size of target (3)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "segout[7]" is stuck at VCC
+Info: Registers with preset signals will power-up high
+Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
+    Info: Register "num~380" lost all its fanouts during netlist optimizations.
+    Info: Register "num~381" lost all its fanouts during netlist optimizations.
+    Info: Register "num~382" lost all its fanouts during netlist optimizations.
+Info: Implemented 215 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 11 output pins
+    Info: Implemented 202 logic cells
+Info: Generated suppressed messages file D:/shapaOuO/sevenLedPattern/sevenLedPattern.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 246 megabytes
+    Info: Processing ended: Thu Oct 28 09:43:42 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/shapaOuO/sevenLedPattern/sevenLedPattern.map.smsg.
+
+
