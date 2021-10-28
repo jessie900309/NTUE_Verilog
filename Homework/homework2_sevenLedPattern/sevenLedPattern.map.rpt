@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sevenLedPattern
-Thu Oct 28 09:43:41 2021
+Thu Oct 28 10:50:06 2021
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -44,12 +44,12 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                          ;
 +-----------------------------+-----------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Oct 28 09:43:41 2021   ;
+; Analysis & Synthesis Status ; Successful - Thu Oct 28 10:50:06 2021   ;
 ; Quartus II Version          ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
 ; Revision Name               ; sevenLedPattern                         ;
 ; Top-level Entity Name       ; sevenLedPattern                         ;
 ; Family                      ; MAX II                                  ;
-; Total logic elements        ; 202                                     ;
+; Total logic elements        ; 346                                     ;
 ; Total pins                  ; 13                                      ;
 ; Total virtual pins          ; 0                                       ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                           ;
@@ -136,33 +136,33 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 202   ;
-;     -- Combinational with no register       ; 121   ;
-;     -- Register only                        ; 13    ;
-;     -- Combinational with a register        ; 68    ;
+; Total logic elements                        ; 346   ;
+;     -- Combinational with no register       ; 252   ;
+;     -- Register only                        ; 7     ;
+;     -- Combinational with a register        ; 87    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 108   ;
-;     -- 3 input functions                    ; 40    ;
-;     -- 2 input functions                    ; 32    ;
-;     -- 1 input functions                    ; 8     ;
-;     -- 0 input functions                    ; 1     ;
+;     -- 4 input functions                    ; 216   ;
+;     -- 3 input functions                    ; 76    ;
+;     -- 2 input functions                    ; 42    ;
+;     -- 1 input functions                    ; 3     ;
+;     -- 0 input functions                    ; 2     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 177   ;
+;     -- normal mode                          ; 321   ;
 ;     -- arithmetic mode                      ; 25    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 26    ;
-;     -- asynchronous clear/load mode         ; 77    ;
+;     -- asynchronous clear/load mode         ; 89    ;
 ;                                             ;       ;
-; Total registers                             ; 81    ;
+; Total registers                             ; 94    ;
 ; Total logic cells in carry chains           ; 26    ;
 ; I/O pins                                    ; 13    ;
 ; Maximum fan-out node                        ; reset ;
-; Maximum fan-out                             ; 78    ;
-; Total fan-out                               ; 874   ;
-; Average fan-out                             ; 4.07  ;
+; Maximum fan-out                             ; 91    ;
+; Total fan-out                               ; 1452  ;
+; Average fan-out                             ; 4.04  ;
 +---------------------------------------------+-------+
 
 
@@ -171,7 +171,7 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |sevenLedPattern           ; 202 (202)   ; 81           ; 0          ; 13   ; 0            ; 121 (121)    ; 13 (13)           ; 68 (68)          ; 26 (26)         ; 0 (0)      ; |sevenLedPattern    ; work         ;
+; |sevenLedPattern           ; 346 (346)   ; 94           ; 0          ; 13   ; 0            ; 252 (252)    ; 7 (7)             ; 87 (87)          ; 26 (26)         ; 0 (0)      ; |sevenLedPattern    ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -198,38 +198,26 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------+
 ; Register name                          ; Reason for Removal                     ;
 +----------------------------------------+----------------------------------------+
-; clkCNT[21..25]                         ; Stuck at GND due to stuck port data_in ;
-; clkCNT[16..17]                         ; Stuck at VCC due to stuck port data_in ;
-; clkCNT[10..11,13,15]                   ; Stuck at GND due to stuck port data_in ;
-; clkCNT[9]                              ; Stuck at VCC due to stuck port data_in ;
-; clkCNT[8]                              ; Stuck at GND due to stuck port data_in ;
-; clkCNT[6]                              ; Stuck at VCC due to stuck port data_in ;
-; clkCNT[0..3,5]                         ; Stuck at GND due to stuck port data_in ;
-; clkCNT[4]                              ; Merged with clkCNT[7]                  ;
-; clkCNT[7]                              ; Merged with clkCNT[12]                 ;
+; clkCNT[0..3,8,22,24]                   ; Merged with clkCNT[25]                 ;
+; clkCNT[5,10..11,13,15,21]              ; Merged with clkCNT[23]                 ;
 ; clkCNT[12]                             ; Merged with clkCNT[20]                 ;
-; clkCNT[14]                             ; Merged with clkCNT[18]                 ;
 ; clkCNT[18]                             ; Merged with clkCNT[19]                 ;
-; clkCNT[19]                             ; Merged with clkCNT[20]                 ;
-; q[0][3]                                ; Merged with q[0][5]                    ;
+; clkCNT[6,9]                            ; Merged with clkCNT[16]                 ;
+; clkCNT[4]                              ; Merged with clkCNT[7]                  ;
 ; q[0][4]                                ; Merged with q[0][5]                    ;
-; q[1][4]                                ; Merged with q[1][5]                    ;
-; q[1][0]                                ; Merged with q[1][5]                    ;
 ; q[2][4]                                ; Merged with q[2][5]                    ;
-; q[2][3]                                ; Merged with q[2][5]                    ;
-; q[3][4]                                ; Merged with q[3][5]                    ;
-; q[3][0]                                ; Merged with q[3][5]                    ;
 ; q[4][4]                                ; Merged with q[4][5]                    ;
-; q[4][3]                                ; Merged with q[4][5]                    ;
-; q[5][0]                                ; Merged with q[5][5]                    ;
 ; q[5][4]                                ; Merged with q[5][5]                    ;
-; q[6][4]                                ; Merged with q[6][5]                    ;
-; q[6][3]                                ; Merged with q[6][5]                    ;
-; q[7][0]                                ; Merged with q[7][5]                    ;
+; clkCNT[25]                             ; Stuck at GND due to stuck port data_in ;
+; clkCNT[17]                             ; Stuck at VCC due to stuck port data_in ;
+; q[3][4]                                ; Stuck at VCC due to stuck port data_in ;
+; clkCNT[16]                             ; Merged with clkCNT[23]                 ;
+; clkCNT[14]                             ; Merged with clkCNT[20]                 ;
+; clkCNT[7]                              ; Merged with clkCNT[19]                 ;
 ; num~380                                ; Lost fanout                            ;
 ; num~381                                ; Lost fanout                            ;
 ; num~382                                ; Lost fanout                            ;
-; Total Number of Removed Registers = 43 ;                                        ;
+; Total Number of Removed Registers = 31 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
@@ -238,12 +226,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 81    ;
+; Total registers                              ; 94    ;
 ; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 77    ;
+; Number of registers using Asynchronous Clear ; 89    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Clock Enable       ; 47    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -253,68 +241,81 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; q[4][0]                                 ; 4       ;
-; q[2][0]                                 ; 4       ;
-; q[0][0]                                 ; 6       ;
+; q[3][0]                                 ; 6       ;
+; q[5][0]                                 ; 5       ;
+; q[1][0]                                 ; 4       ;
+; q[7][0]                                 ; 9       ;
+; q[2][0]                                 ; 3       ;
+; q[4][0]                                 ; 3       ;
+; q[0][0]                                 ; 4       ;
 ; q[6][0]                                 ; 4       ;
+; q[5][1]                                 ; 5       ;
+; q[3][1]                                 ; 5       ;
+; q[1][1]                                 ; 5       ;
+; q[7][1]                                 ; 7       ;
+; q[2][1]                                 ; 10      ;
+; q[4][1]                                 ; 10      ;
+; q[0][1]                                 ; 11      ;
+; q[6][1]                                 ; 8       ;
+; q[5][2]                                 ; 6       ;
+; q[3][2]                                 ; 7       ;
+; q[1][2]                                 ; 4       ;
+; q[7][2]                                 ; 7       ;
+; q[2][2]                                 ; 5       ;
+; q[4][2]                                 ; 5       ;
+; q[0][2]                                 ; 6       ;
+; q[6][2]                                 ; 6       ;
+; q[5][3]                                 ; 3       ;
+; q[3][3]                                 ; 3       ;
+; q[1][3]                                 ; 6       ;
+; q[7][3]                                 ; 9       ;
+; q[2][3]                                 ; 9       ;
+; q[4][3]                                 ; 7       ;
+; q[0][3]                                 ; 9       ;
+; q[6][3]                                 ; 7       ;
+; q[4][5]                                 ; 3       ;
+; q[5][5]                                 ; 3       ;
+; q[1][4]                                 ; 3       ;
+; q[0][5]                                 ; 5       ;
+; q[2][5]                                 ; 4       ;
+; q[7][4]                                 ; 9       ;
+; q[6][4]                                 ; 4       ;
 ; q[1][5]                                 ; 3       ;
 ; q[3][5]                                 ; 3       ;
-; q[5][5]                                 ; 5       ;
-; q[7][5]                                 ; 3       ;
-; q[3][1]                                 ; 3       ;
-; q[5][1]                                 ; 4       ;
-; q[1][1]                                 ; 3       ;
-; q[7][1]                                 ; 6       ;
-; q[2][1]                                 ; 5       ;
-; q[4][1]                                 ; 5       ;
-; q[0][1]                                 ; 5       ;
-; q[6][1]                                 ; 5       ;
-; q[3][2]                                 ; 5       ;
-; q[5][2]                                 ; 5       ;
-; q[1][2]                                 ; 6       ;
-; q[7][2]                                 ; 6       ;
-; q[4][2]                                 ; 4       ;
-; q[2][2]                                 ; 4       ;
-; q[0][2]                                 ; 6       ;
-; q[6][2]                                 ; 4       ;
-; q[5][3]                                 ; 4       ;
-; q[3][3]                                 ; 4       ;
-; q[1][3]                                 ; 5       ;
-; q[7][3]                                 ; 3       ;
-; q[4][5]                                 ; 4       ;
-; q[2][5]                                 ; 4       ;
-; q[0][5]                                 ; 5       ;
 ; q[6][5]                                 ; 4       ;
-; q[7][4]                                 ; 4       ;
-; q[3][6]                                 ; 4       ;
+; q[7][5]                                 ; 5       ;
 ; q[5][6]                                 ; 5       ;
-; q[1][6]                                 ; 5       ;
-; q[7][6]                                 ; 6       ;
-; q[4][6]                                 ; 5       ;
+; q[3][6]                                 ; 5       ;
+; q[1][6]                                 ; 4       ;
+; q[7][6]                                 ; 5       ;
 ; q[2][6]                                 ; 5       ;
-; q[0][6]                                 ; 15      ;
-; q[6][6]                                 ; 5       ;
-; clkCNT[20]                              ; 4       ;
-; Total number of inverted registers = 42 ;         ;
+; q[4][6]                                 ; 5       ;
+; q[0][6]                                 ; 6       ;
+; q[6][6]                                 ; 6       ;
+; clkCNT[20]                              ; 1       ;
+; Total number of inverted registers = 52 ;         ;
 +-----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |sevenLedPattern|q[0][6]   ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |sevenLedPattern|q[7][6]   ;
-; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[1][1]   ;
-; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[2][1]   ;
-; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[3][1]   ;
-; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[4][0]   ;
-; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[5][5]   ;
-; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; Yes        ; |sevenLedPattern|q[6][1]   ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |sevenLedPattern|Mux0      ;
-; 30:1               ; 8 bits    ; 160 LEs       ; 40 LEs               ; 120 LEs                ; No         ; |sevenLedPattern|num~175   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 18:1               ; 4 bits    ; 48 LEs        ; 4 LEs                ; 44 LEs                 ; Yes        ; |sevenLedPattern|clkCNT[14] ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 4 LEs                ; 44 LEs                 ; Yes        ; |sevenLedPattern|clkCNT[7]  ;
+; 27:1               ; 6 bits    ; 108 LEs       ; 42 LEs               ; 66 LEs                 ; Yes        ; |sevenLedPattern|q[0][6]    ;
+; 30:1               ; 7 bits    ; 140 LEs       ; 49 LEs               ; 91 LEs                 ; Yes        ; |sevenLedPattern|q[7][1]    ;
+; 31:1               ; 7 bits    ; 140 LEs       ; 56 LEs               ; 84 LEs                 ; Yes        ; |sevenLedPattern|q[1][2]    ;
+; 31:1               ; 6 bits    ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |sevenLedPattern|q[2][2]    ;
+; 31:1               ; 7 bits    ; 140 LEs       ; 56 LEs               ; 84 LEs                 ; Yes        ; |sevenLedPattern|q[3][2]    ;
+; 31:1               ; 6 bits    ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |sevenLedPattern|q[4][6]    ;
+; 31:1               ; 6 bits    ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |sevenLedPattern|q[5][3]    ;
+; 31:1               ; 7 bits    ; 140 LEs       ; 56 LEs               ; 84 LEs                 ; Yes        ; |sevenLedPattern|q[6][0]    ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 25 LEs               ; 0 LEs                  ; No         ; |sevenLedPattern|Mux3       ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sevenLedPattern|Mux2       ;
+; 30:1               ; 8 bits    ; 160 LEs       ; 40 LEs               ; 120 LEs                ; No         ; |sevenLedPattern|num~169    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
 +-------------------------------+
@@ -323,13 +324,13 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
-    Info: Processing started: Thu Oct 28 09:43:41 2021
+    Info: Processing started: Thu Oct 28 10:50:04 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sevenLedPattern -c sevenLedPattern
 Info: Found 1 design units, including 1 entities, in source file sevenLedPattern.v
     Info: Found entity 1: sevenLedPattern
 Info: Elaborating entity "sevenLedPattern" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at sevenLedPattern.v(23): truncated value with size 32 to match size of target (26)
-Warning (10230): Verilog HDL assignment warning at sevenLedPattern.v(152): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at sevenLedPattern.v(24): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at sevenLedPattern.v(193): truncated value with size 32 to match size of target (3)
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "segout[7]" is stuck at VCC
 Info: Registers with preset signals will power-up high
@@ -337,16 +338,16 @@ Info: 3 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "num~380" lost all its fanouts during netlist optimizations.
     Info: Register "num~381" lost all its fanouts during netlist optimizations.
     Info: Register "num~382" lost all its fanouts during netlist optimizations.
-Info: Implemented 215 device resources after synthesis - the final resource count might be different
+Info: Implemented 359 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 11 output pins
-    Info: Implemented 202 logic cells
+    Info: Implemented 346 logic cells
 Info: Generated suppressed messages file D:/shapaOuO/sevenLedPattern/sevenLedPattern.map.smsg
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 246 megabytes
-    Info: Processing ended: Thu Oct 28 09:43:42 2021
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 247 megabytes
+    Info: Processing ended: Thu Oct 28 10:50:06 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+

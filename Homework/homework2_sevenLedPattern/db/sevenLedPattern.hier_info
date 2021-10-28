@@ -136,6 +136,7 @@ reset => clkCNT[1].ACLR
 reset => clkCNT[0].ACLR
 reset => modeS_done.ACLR
 reset => clk1.ENA
+reset => OuOmode.ENA
 reset => num~177.IN1
 segout[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
 segout[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE

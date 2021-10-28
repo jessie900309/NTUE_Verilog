@@ -1,5 +1,5 @@
 Fitter report for sevenLedPattern
-Thu Oct 28 09:43:43 2021
+Thu Oct 28 10:50:07 2021
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -59,14 +59,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------+
 ; Fitter Summary                                                  ;
 +-----------------------+-----------------------------------------+
-; Fitter Status         ; Successful - Thu Oct 28 09:43:43 2021   ;
+; Fitter Status         ; Successful - Thu Oct 28 10:50:07 2021   ;
 ; Quartus II Version    ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
 ; Revision Name         ; sevenLedPattern                         ;
 ; Top-level Entity Name ; sevenLedPattern                         ;
 ; Family                ; MAX II                                  ;
 ; Device                ; EPM570T144C5                            ;
 ; Timing Models         ; Final                                   ;
-; Total logic elements  ; 189 / 570 ( 33 % )                      ;
+; Total logic elements  ; 339 / 570 ( 59 % )                      ;
 ; Total pins            ; 13 / 116 ( 11 % )                       ;
 ; Total virtual pins    ; 0                                       ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                           ;
@@ -132,28 +132,28 @@ The pin-out file can be found in D:/shapaOuO/sevenLedPattern/sevenLedPattern.pin
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Total logic elements                        ; 189 / 570 ( 33 % ) ;
-;     -- Combinational with no register       ; 108                ;
+; Total logic elements                        ; 339 / 570 ( 59 % ) ;
+;     -- Combinational with no register       ; 245                ;
 ;     -- Register only                        ; 0                  ;
-;     -- Combinational with a register        ; 81                 ;
+;     -- Combinational with a register        ; 94                 ;
 ;                                             ;                    ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 108                ;
-;     -- 3 input functions                    ; 40                 ;
-;     -- 2 input functions                    ; 32                 ;
-;     -- 1 input functions                    ; 8                  ;
-;     -- 0 input functions                    ; 1                  ;
+;     -- 4 input functions                    ; 216                ;
+;     -- 3 input functions                    ; 76                 ;
+;     -- 2 input functions                    ; 42                 ;
+;     -- 1 input functions                    ; 3                  ;
+;     -- 0 input functions                    ; 2                  ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 164                ;
+;     -- normal mode                          ; 314                ;
 ;     -- arithmetic mode                      ; 25                 ;
-;     -- qfbk mode                            ; 13                 ;
+;     -- qfbk mode                            ; 7                  ;
 ;     -- register cascade mode                ; 0                  ;
-;     -- synchronous clear/load mode          ; 39                 ;
-;     -- asynchronous clear/load mode         ; 77                 ;
+;     -- synchronous clear/load mode          ; 33                 ;
+;     -- asynchronous clear/load mode         ; 89                 ;
 ;                                             ;                    ;
-; Total registers                             ; 81 / 570 ( 14 % )  ;
-; Total LABs                                  ; 20 / 57 ( 35 % )   ;
+; Total registers                             ; 94 / 570 ( 16 % )  ;
+; Total LABs                                  ; 38 / 57 ( 67 % )   ;
 ; Logic elements in carry chains              ; 26                 ;
 ; User inserted logic elements                ; 0                  ;
 ; Virtual pins                                ; 0                  ;
@@ -163,14 +163,14 @@ The pin-out file can be found in D:/shapaOuO/sevenLedPattern/sevenLedPattern.pin
 ; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
 ; Global clocks                               ; 4 / 4 ( 100 % )    ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )      ;
-; Average interconnect usage (total/H/V)      ; 18% / 21% / 16%    ;
-; Peak interconnect usage (total/H/V)         ; 18% / 21% / 16%    ;
+; Average interconnect usage (total/H/V)      ; 34% / 42% / 26%    ;
+; Peak interconnect usage (total/H/V)         ; 34% / 42% / 26%    ;
 ; Maximum fan-out node                        ; reset              ;
-; Maximum fan-out                             ; 78                 ;
+; Maximum fan-out                             ; 91                 ;
 ; Highest non-global fan-out signal           ; modeS_done         ;
-; Highest non-global fan-out                  ; 47                 ;
-; Total fan-out                               ; 877                ;
-; Average fan-out                             ; 4.34               ;
+; Highest non-global fan-out                  ; 87                 ;
+; Total fan-out                               ; 1462               ;
+; Average fan-out                             ; 4.15               ;
 +---------------------------------------------+--------------------+
 
 
@@ -180,7 +180,7 @@ The pin-out file can be found in D:/shapaOuO/sevenLedPattern/sevenLedPattern.pin
 ; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; clk   ; 18    ; 1        ; 0            ; 5            ; 0           ; 27                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; reset ; 89    ; 2        ; 13           ; 4            ; 4           ; 78                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; reset ; 89    ; 2        ; 13           ; 4            ; 4           ; 91                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
@@ -189,11 +189,11 @@ The pin-out file can be found in D:/shapaOuO/sevenLedPattern/sevenLedPattern.pin
 +------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+
-; scanout[0] ; 123   ; 2        ; 8            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
+; scanout[0] ; 123   ; 2        ; 8            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ;
 ; scanout[1] ; 122   ; 2        ; 8            ; 8            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
 ; scanout[2] ; 121   ; 2        ; 8            ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
-; segout[0]  ; 133   ; 2        ; 6            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
-; segout[1]  ; 132   ; 2        ; 6            ; 8            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
+; segout[0]  ; 133   ; 2        ; 6            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ;
+; segout[1]  ; 132   ; 2        ; 6            ; 8            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ;
 ; segout[2]  ; 131   ; 2        ; 6            ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
 ; segout[3]  ; 130   ; 2        ; 7            ; 8            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
 ; segout[4]  ; 129   ; 2        ; 7            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ;
@@ -387,7 +387,7 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |sevenLedPattern           ; 189 (189)   ; 81           ; 0          ; 13   ; 0            ; 108 (108)    ; 0 (0)             ; 81 (81)          ; 26 (26)         ; 13 (13)    ; |sevenLedPattern    ; work         ;
+; |sevenLedPattern           ; 339 (339)   ; 94           ; 0          ; 13   ; 0            ; 245 (245)    ; 0 (0)             ; 94 (94)          ; 26 (26)         ; 7 (7)      ; |sevenLedPattern    ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -413,25 +413,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------+----------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                         ;
-+--------------+--------------+---------+--------------+--------+----------------------+------------------+
-; Name         ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
-+--------------+--------------+---------+--------------+--------+----------------------+------------------+
-; Equal0~340   ; LC_X12_Y4_N9 ; 27      ; Sync. clear  ; no     ; --                   ; --               ;
-; clk          ; PIN_18       ; 27      ; Clock        ; yes    ; Global Clock         ; GCLK0            ;
-; clk1         ; LC_X10_Y4_N0 ; 52      ; Clock        ; yes    ; Global Clock         ; GCLK1            ;
-; cnt_scan[15] ; LC_X11_Y4_N7 ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK3            ;
-; num~532      ; LC_X11_Y5_N7 ; 8       ; Clock enable ; no     ; --                   ; --               ;
-; q[1][1]~7497 ; LC_X9_Y6_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ;
-; q[2][1]~7480 ; LC_X11_Y6_N7 ; 5       ; Clock enable ; no     ; --                   ; --               ;
-; q[3][1]~7502 ; LC_X12_Y5_N0 ; 5       ; Clock enable ; no     ; --                   ; --               ;
-; q[4][0]~7475 ; LC_X10_Y6_N3 ; 5       ; Clock enable ; no     ; --                   ; --               ;
-; q[5][5]~7507 ; LC_X9_Y4_N7  ; 5       ; Clock enable ; no     ; --                   ; --               ;
-; q[6][1]~7491 ; LC_X9_Y4_N5  ; 5       ; Clock enable ; no     ; --                   ; --               ;
-; q[7][6]~7511 ; LC_X11_Y2_N8 ; 6       ; Clock enable ; no     ; --                   ; --               ;
-; reset        ; PIN_89       ; 78      ; Async. clear ; yes    ; Global Clock         ; GCLK2            ;
-+--------------+--------------+---------+--------------+--------+----------------------+------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                           ;
++----------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Name           ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++----------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Equal0~454     ; LC_X10_Y4_N5 ; 27      ; Sync. clear  ; no     ; --                   ; --               ;
+; clk            ; PIN_18       ; 27      ; Clock        ; yes    ; Global Clock         ; GCLK0            ;
+; clk1           ; LC_X12_Y3_N8 ; 65      ; Clock        ; yes    ; Global Clock         ; GCLK3            ;
+; clkCNT[23]~704 ; LC_X12_Y4_N5 ; 3       ; Clock enable ; no     ; --                   ; --               ;
+; cnt_scan[15]   ; LC_X11_Y3_N7 ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK1            ;
+; num~532        ; LC_X7_Y5_N7  ; 8       ; Clock enable ; no     ; --                   ; --               ;
+; q[0][6]~18836  ; LC_X7_Y4_N7  ; 6       ; Clock enable ; no     ; --                   ; --               ;
+; q[1][2]~18796  ; LC_X6_Y5_N1  ; 7       ; Clock enable ; no     ; --                   ; --               ;
+; q[2][2]~18815  ; LC_X6_Y5_N2  ; 6       ; Clock enable ; no     ; --                   ; --               ;
+; q[3][2]~18773  ; LC_X11_Y6_N6 ; 6       ; Clock enable ; no     ; --                   ; --               ;
+; q[4][6]~18825  ; LC_X11_Y7_N6 ; 6       ; Clock enable ; no     ; --                   ; --               ;
+; q[5][3]~18784  ; LC_X10_Y6_N5 ; 6       ; Clock enable ; no     ; --                   ; --               ;
+; reset          ; PIN_89       ; 91      ; Async. clear ; yes    ; Global Clock         ; GCLK2            ;
++----------------+--------------+---------+--------------+--------+----------------------+------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -440,68 +440,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name         ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
 +--------------+--------------+---------+----------------------+------------------+
 ; clk          ; PIN_18       ; 27      ; Global Clock         ; GCLK0            ;
-; clk1         ; LC_X10_Y4_N0 ; 52      ; Global Clock         ; GCLK1            ;
-; cnt_scan[15] ; LC_X11_Y4_N7 ; 5       ; Global Clock         ; GCLK3            ;
-; reset        ; PIN_89       ; 78      ; Global Clock         ; GCLK2            ;
+; clk1         ; LC_X12_Y3_N8 ; 65      ; Global Clock         ; GCLK3            ;
+; cnt_scan[15] ; LC_X11_Y3_N7 ; 5       ; Global Clock         ; GCLK1            ;
+; reset        ; PIN_89       ; 91      ; Global Clock         ; GCLK2            ;
 +--------------+--------------+---------+----------------------+------------------+
 
 
 +---------------------------------+
 ; Non-Global High Fan-Out Signals ;
-+------------------+--------------+
-; Name             ; Fan-Out      ;
-+------------------+--------------+
-; modeS_done       ; 47           ;
-; Equal0~340       ; 27           ;
-; q~7470           ; 21           ;
-; scanout[1]~reg0  ; 19           ;
-; scanout[2]~reg0  ; 19           ;
-; q[0][6]          ; 15           ;
-; Equal1~71        ; 11           ;
-; scanout[0]~reg0  ; 11           ;
-; num.001          ; 10           ;
-; num~532          ; 8            ;
-; num.011          ; 8            ;
-; num.111          ; 8            ;
-; num.110          ; 7            ;
-; num.100          ; 7            ;
-; num.010          ; 7            ;
-; q~7492           ; 7            ;
-; num.101          ; 7            ;
-; q[7][6]~7511     ; 6            ;
-; q[7][6]          ; 6            ;
-; q[0][2]          ; 6            ;
-; q[7][2]          ; 6            ;
-; q[1][2]          ; 6            ;
-; q[7][1]          ; 6            ;
-; q[0][0]          ; 6            ;
-; cnt_scan[17]~273 ; 5            ;
-; cnt_scan[2]~257  ; 5            ;
-; cnt_scan[7]~249  ; 5            ;
-; cnt_scan[12]~243 ; 5            ;
-; q[5][5]~7507     ; 5            ;
-; q[3][1]~7502     ; 5            ;
-; q[1][1]~7497     ; 5            ;
-; q[6][1]~7491     ; 5            ;
-; q[0][6]~7485     ; 5            ;
-; q[2][1]~7480     ; 5            ;
-; q[4][0]~7475     ; 5            ;
-; q[0][5]          ; 5            ;
-; q[1][3]          ; 5            ;
-; q[5][2]          ; 5            ;
-; q[3][2]          ; 5            ;
-; q[6][1]          ; 5            ;
-; q[0][1]          ; 5            ;
-; q[4][1]          ; 5            ;
-; q[2][1]          ; 5            ;
-; q[5][5]          ; 5            ;
-; clkCNT[20]       ; 4            ;
-; Equal24~70       ; 4            ;
-; q[1][6]          ; 4            ;
-; Equal26~88       ; 4            ;
-; q[6][6]          ; 4            ;
-; Equal20~44       ; 4            ;
-+------------------+--------------+
++-----------------+---------------+
+; Name            ; Fan-Out       ;
++-----------------+---------------+
+; modeS_done      ; 87            ;
+; Equal0~454      ; 27            ;
+; always1~0       ; 22            ;
+; scanout[2]~reg0 ; 21            ;
+; scanout[1]~reg0 ; 21            ;
+; Equal25~76      ; 15            ;
+; scanout[0]~reg0 ; 15            ;
+; always1~147     ; 14            ;
+; Equal28~55      ; 13            ;
+; num.001         ; 12            ;
+; Equal27~55      ; 12            ;
+; Equal29~55      ; 12            ;
+; q[0][1]         ; 11            ;
+; num.111         ; 10            ;
+; Equal39~95      ; 10            ;
+; Equal36~70      ; 10            ;
+; Equal26~42      ; 10            ;
+; q[4][1]         ; 10            ;
+; q[2][1]         ; 10            ;
+; q[0][6]~18827   ; 9             ;
+; num.101         ; 9             ;
+; Equal38~55      ; 9             ;
+; Equal37~55      ; 9             ;
+; q[7][4]         ; 9             ;
+; q[0][3]         ; 9             ;
+; q[2][3]         ; 9             ;
+; q[7][3]         ; 9             ;
+; q[7][0]         ; 9             ;
+; num~532         ; 8             ;
+; num.110         ; 8             ;
+; Equal32~39      ; 8             ;
+; OuOmode~231     ; 8             ;
+; Equal30~55      ; 8             ;
+; Equal31~85      ; 8             ;
+; num.010         ; 8             ;
+; num.100         ; 8             ;
+; num.011         ; 8             ;
+; q[6][1]         ; 8             ;
+; q[6][0]~18845   ; 7             ;
+; q[7][1]~18803   ; 7             ;
+; q[1][2]~18796   ; 7             ;
+; q~18774         ; 7             ;
+; Equal8~54       ; 7             ;
+; q[6][3]         ; 7             ;
+; q[4][3]         ; 7             ;
+; q[7][2]         ; 7             ;
+; q[3][2]         ; 7             ;
+; q[7][1]         ; 7             ;
+; Equal40~33      ; 6             ;
+; q[0][6]~18836   ; 6             ;
++-----------------+---------------+
 
 
 +---------------------------------------------------+
@@ -509,118 +509,115 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+----------------------+
 ; Interconnect Resource Type ; Usage                ;
 +----------------------------+----------------------+
-; C4s                        ; 204 / 1,624 ( 13 % ) ;
-; Direct links               ; 30 / 1,930 ( 2 % )   ;
+; C4s                        ; 345 / 1,624 ( 21 % ) ;
+; Direct links               ; 76 / 1,930 ( 4 % )   ;
 ; Global clocks              ; 4 / 4 ( 100 % )      ;
-; LAB clocks                 ; 19 / 56 ( 34 % )     ;
-; LUT chains                 ; 18 / 513 ( 4 % )     ;
-; Local interconnects        ; 346 / 1,930 ( 18 % ) ;
-; R4s                        ; 259 / 1,472 ( 18 % ) ;
+; LAB clocks                 ; 25 / 56 ( 45 % )     ;
+; LUT chains                 ; 37 / 513 ( 7 % )     ;
+; Local interconnects        ; 610 / 1,930 ( 32 % ) ;
+; R4s                        ; 501 / 1,472 ( 34 % ) ;
 +----------------------------+----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 9.45) ; Number of LABs  (Total = 20) ;
+; Number of Logic Elements  (Average = 8.92) ; Number of LABs  (Total = 38) ;
 +--------------------------------------------+------------------------------+
 ; 1                                          ; 0                            ;
-; 2                                          ; 0                            ;
+; 2                                          ; 2                            ;
 ; 3                                          ; 1                            ;
 ; 4                                          ; 0                            ;
 ; 5                                          ; 0                            ;
-; 6                                          ; 0                            ;
+; 6                                          ; 2                            ;
 ; 7                                          ; 1                            ;
-; 8                                          ; 0                            ;
-; 9                                          ; 1                            ;
-; 10                                         ; 17                           ;
+; 8                                          ; 2                            ;
+; 9                                          ; 3                            ;
+; 10                                         ; 27                           ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.60) ; Number of LABs  (Total = 20) ;
+; LAB-wide Signals  (Average = 1.63) ; Number of LABs  (Total = 38) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 18                           ;
-; 1 Clock                            ; 17                           ;
-; 1 Clock enable                     ; 9                            ;
-; 1 Sync. clear                      ; 1                            ;
-; 2 Clock enables                    ; 5                            ;
-; 2 Clocks                           ; 2                            ;
+; 1 Async. clear                     ; 23                           ;
+; 1 Clock                            ; 26                           ;
+; 1 Clock enable                     ; 8                            ;
+; 1 Sync. clear                      ; 2                            ;
+; 2 Clock enables                    ; 3                            ;
 +------------------------------------+------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 10.10) ; Number of LABs  (Total = 20) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 10                           ;
-; 11                                           ; 5                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 9.11) ; Number of LABs  (Total = 38) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 3                            ;
+; 9                                           ; 3                            ;
+; 10                                          ; 21                           ;
+; 11                                          ; 6                            ;
++---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.70) ; Number of LABs  (Total = 20) ;
+; Number of Signals Sourced Out  (Average = 6.61) ; Number of LABs  (Total = 38) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 0                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 5                            ;
-; 8                                               ; 5                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 4                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 6                            ;
+; 6                                               ; 6                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 6                            ;
 ; 9                                               ; 5                            ;
-; 10                                              ; 1                            ;
-; 11                                              ; 1                            ;
+; 10                                              ; 4                            ;
+; 11                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 16.60) ; Number of LABs  (Total = 20) ;
+; Number of Distinct Inputs  (Average = 15.45) ; Number of LABs  (Total = 38) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 2                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 2                            ;
 ; 13                                           ; 1                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 2                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 4                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 2                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 4                            ;
-; 22                                           ; 4                            ;
+; 19                                           ; 7                            ;
+; 20                                           ; 6                            ;
+; 21                                           ; 3                            ;
+; 22                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -644,10 +641,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk             ; clk                  ; 7.852             ;
-+-----------------+----------------------+-------------------+
-Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
-This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
 +----------------------------+
@@ -661,69 +654,71 @@ This will disable optimization of problematic paths and expose them for further 
 +--------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Advanced Data - Placement Preparation                                                             ;
-+--------------------------------------------------------------------------------+------------------+
-; Name                                                                           ; Value            ;
-+--------------------------------------------------------------------------------+------------------+
-; Auto Fit Point 1 - Fit Attempt 1                                               ; ff               ;
-; Mid Wire Use - Fit Attempt 1                                                   ; 25               ;
-; Mid Slack - Fit Attempt 1                                                      ; -17171           ;
-; Internal Atom Count - Fit Attempt 1                                            ; 189              ;
-; LE/ALM Count - Fit Attempt 1                                                   ; 189              ;
-; LAB Count - Fit Attempt 1                                                      ; 20               ;
-; Outputs per Lab - Fit Attempt 1                                                ; 7.700            ;
-; Inputs per LAB - Fit Attempt 1                                                 ; 14.800           ;
-; Global Inputs per LAB - Fit Attempt 1                                          ; 2.000            ;
-; LAB Constraint 'non-global clock / CE pair + async load' - Fit Attempt 1       ; 0:20             ;
-; LAB Constraint 'ce + sync load' - Fit Attempt 1                                ; 0:5;1:7;2:8      ;
-; LAB Constraint 'non-global controls' - Fit Attempt 1                           ; 0:2;1:10;2:8     ;
-; LAB Constraint 'un-route combination' - Fit Attempt 1                          ; 0:2;1:10;2:8     ;
-; LAB Constraint 'non-global with asyn_clear' - Fit Attempt 1                    ; 0:1;1:1;2:10;3:8 ;
-; LAB Constraint 'un-route with async_clear' - Fit Attempt 1                     ; 0:1;1:1;2:10;3:8 ;
-; LAB Constraint 'non-global async clear + sync clear' - Fit Attempt 1           ; 0:17;1:3         ;
-; LAB Constraint 'global non-clock/non-asynch_clear' - Fit Attempt 1             ; 0:20             ;
-; LAB Constraint 'ygr_cl_ngclk_gclkce_sload_aload_constraint' - Fit Attempt 1    ; 0:5;1:15         ;
-; LAB Constraint 'global control signals' - Fit Attempt 1                        ; 0:1;2:17;3:2     ;
-; LAB Constraint 'clock / ce pair constraint' - Fit Attempt 1                    ; 0:1;1:4;2:15     ;
-; LAB Constraint 'aload_aclr pair with aload used' - Fit Attempt 1               ; 0:20             ;
-; LAB Constraint 'aload_aclr pair' - Fit Attempt 1                               ; 0:1;1:16;2:3     ;
-; LAB Constraint 'sload_sclear pair' - Fit Attempt 1                             ; 0:8;1:12         ;
-; LAB Constraint 'invert_a constraint' - Fit Attempt 1                           ; 1:20             ;
-; LAB Constraint 'has placement constraint' - Fit Attempt 1                      ; 0:17;1:3         ;
-; LAB Constraint 'use of ADATA or SDATA by registers constraint' - Fit Attempt 1 ; 0:20             ;
-; LEs in Chains - Fit Attempt 1                                                  ; 26               ;
-; LEs in Long Chains - Fit Attempt 1                                             ; 26               ;
-; LABs with Chains - Fit Attempt 1                                               ; 3                ;
-; LABs with Multiple Chains - Fit Attempt 1                                      ; 0                ;
-; Time - Fit Attempt 1                                                           ; 0                ;
-+--------------------------------------------------------------------------------+------------------+
++----------------------------------------------------------------------------------------------------+
+; Advanced Data - Placement Preparation                                                              ;
++--------------------------------------------------------------------------------+-------------------+
+; Name                                                                           ; Value             ;
++--------------------------------------------------------------------------------+-------------------+
+; Mid Wire Use - Fit Attempt 1                                                   ; 45                ;
+; Mid Slack - Fit Attempt 1                                                      ; -17019            ;
+; Internal Atom Count - Fit Attempt 1                                            ; 339               ;
+; LE/ALM Count - Fit Attempt 1                                                   ; 339               ;
+; LAB Count - Fit Attempt 1                                                      ; 38                ;
+; Outputs per Lab - Fit Attempt 1                                                ; 6.605             ;
+; Inputs per LAB - Fit Attempt 1                                                 ; 14.211            ;
+; Global Inputs per LAB - Fit Attempt 1                                          ; 1.316             ;
+; LAB Constraint 'non-global clock / CE pair + async load' - Fit Attempt 1       ; 0:38              ;
+; LAB Constraint 'ce + sync load' - Fit Attempt 1                                ; 0:21;1:13;2:4     ;
+; LAB Constraint 'non-global controls' - Fit Attempt 1                           ; 0:18;1:16;2:4     ;
+; LAB Constraint 'un-route combination' - Fit Attempt 1                          ; 0:18;1:16;2:4     ;
+; LAB Constraint 'non-global with asyn_clear' - Fit Attempt 1                    ; 0:14;1:4;2:16;3:4 ;
+; LAB Constraint 'un-route with async_clear' - Fit Attempt 1                     ; 0:14;1:4;2:16;3:4 ;
+; LAB Constraint 'non-global async clear + sync clear' - Fit Attempt 1           ; 0:35;1:3          ;
+; LAB Constraint 'global non-clock/non-asynch_clear' - Fit Attempt 1             ; 0:38              ;
+; LAB Constraint 'ygr_cl_ngclk_gclkce_sload_aload_constraint' - Fit Attempt 1    ; 0:21;1:17         ;
+; LAB Constraint 'global control signals' - Fit Attempt 1                        ; 0:12;1:2;2:24     ;
+; LAB Constraint 'clock / ce pair constraint' - Fit Attempt 1                    ; 0:12;1:19;2:7     ;
+; LAB Constraint 'aload_aclr pair with aload used' - Fit Attempt 1               ; 0:38              ;
+; LAB Constraint 'aload_aclr pair' - Fit Attempt 1                               ; 0:12;1:24;2:2     ;
+; LAB Constraint 'sload_sclear pair' - Fit Attempt 1                             ; 0:28;1:10         ;
+; LAB Constraint 'invert_a constraint' - Fit Attempt 1                           ; 1:38              ;
+; LAB Constraint 'has placement constraint' - Fit Attempt 1                      ; 0:35;1:3          ;
+; LAB Constraint 'use of ADATA or SDATA by registers constraint' - Fit Attempt 1 ; 0:38              ;
+; LEs in Chains - Fit Attempt 1                                                  ; 26                ;
+; LEs in Long Chains - Fit Attempt 1                                             ; 26                ;
+; LABs with Chains - Fit Attempt 1                                               ; 3                 ;
+; LABs with Multiple Chains - Fit Attempt 1                                      ; 0                 ;
+; Time - Fit Attempt 1                                                           ; 1                 ;
++--------------------------------------------------------------------------------+-------------------+
 
 
-+---------------------------------------------+
-; Advanced Data - Placement                   ;
-+------------------------------------+--------+
-; Name                               ; Value  ;
-+------------------------------------+--------+
-; Auto Fit Point 2 - Fit Attempt 1   ; ff     ;
-; Auto Fit Point 5 - Fit Attempt 1   ; ff     ;
-; Mid Wire Use - Fit Attempt 1       ; 14     ;
-; Mid Slack - Fit Attempt 1          ; -21534 ;
-; Auto Fit Point 6 - Fit Attempt 1   ; ff     ;
-; Auto Fit Point 6 - Fit Attempt 1   ; ff     ;
-; Auto Fit Point 6 - Fit Attempt 1   ; ff     ;
-; Auto Fit Point 5 - Fit Attempt 1   ; ff     ;
-; Mid Wire Use - Fit Attempt 1       ; 14     ;
-; Mid Slack - Fit Attempt 1          ; -21534 ;
-; Auto Fit Point 6 - Fit Attempt 1   ; ff     ;
-; Auto Fit Point 6 - Fit Attempt 1   ; ff     ;
-; Auto Fit Point 6 - Fit Attempt 1   ; ff     ;
-; Late Wire Use - Fit Attempt 1      ; 15     ;
-; Late Slack - Fit Attempt 1         ; -21534 ;
-; Peak Regional Wire - Fit Attempt 1 ; 0.000  ;
-; Auto Fit Point 7 - Fit Attempt 1   ; ff     ;
-; Time - Fit Attempt 1               ; 0      ;
-+------------------------------------+--------+
++----------------------------------------------+
+; Advanced Data - Placement                    ;
++-------------------------------------+--------+
+; Name                                ; Value  ;
++-------------------------------------+--------+
+; Auto Fit Point 2 - Fit Attempt 1    ; ff     ;
+; Early Wire Use - Fit Attempt 1      ; 13     ;
+; Early Slack - Fit Attempt 1         ; -22136 ;
+; Auto Fit Point 5 - Fit Attempt 1    ; ff     ;
+; Mid Wire Use - Fit Attempt 1        ; 26     ;
+; Mid Slack - Fit Attempt 1           ; -19187 ;
+; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
+; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
+; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
+; Auto Fit Point 5 - Fit Attempt 1    ; ff     ;
+; Mid Wire Use - Fit Attempt 1        ; 26     ;
+; Mid Slack - Fit Attempt 1           ; -19187 ;
+; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
+; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
+; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
+; Late Wire Use - Fit Attempt 1       ; 29     ;
+; Late Slack - Fit Attempt 1          ; -19187 ;
+; Peak Regional Wire - Fit Attempt 1  ; 0.000  ;
+; Auto Fit Point 7 - Fit Attempt 1    ; ff     ;
+; Time - Fit Attempt 1                ; 0      ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.016  ;
++-------------------------------------+--------+
 
 
 +---------------------------------------------------+
@@ -731,14 +726,14 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------------------+-------------+
 ; Name                                ; Value       ;
 +-------------------------------------+-------------+
-; Early Slack - Fit Attempt 1         ; -20538      ;
-; Early Wire Use - Fit Attempt 1      ; 16          ;
-; Peak Regional Wire - Fit Attempt 1  ; 15          ;
-; Mid Slack - Fit Attempt 1           ; -21114      ;
+; Early Slack - Fit Attempt 1         ; -17142      ;
+; Early Wire Use - Fit Attempt 1      ; 29          ;
+; Peak Regional Wire - Fit Attempt 1  ; 26          ;
+; Mid Slack - Fit Attempt 1           ; -20491      ;
 ; Late Slack - Fit Attempt 1          ; -2147483648 ;
-; Late Wire Use - Fit Attempt 1       ; 19          ;
+; Late Wire Use - Fit Attempt 1       ; 34          ;
 ; Time - Fit Attempt 1                ; 0           ;
-; Time in tsm_tan.dll - Fit Attempt 1 ; 0.016       ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.047       ;
 +-------------------------------------+-------------+
 
 
@@ -748,7 +743,7 @@ This will disable optimization of problematic paths and expose them for further 
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
-    Info: Processing started: Thu Oct 28 09:43:42 2021
+    Info: Processing started: Thu Oct 28 10:50:06 2021
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off sevenLedPattern -c sevenLedPattern
 Info: Selected device EPM570T144C5 for design "sevenLedPattern"
 Info: Low junction temperature is 0 degrees C
@@ -775,9 +770,10 @@ Info: Automatically promoted some destinations of signal "clk1" to use Global cl
     Info: Destination "clk1" may be non-global or may not use global clock
 Info: Automatically promoted some destinations of signal "cnt_scan[15]" to use Global clock
     Info: Destination "cnt_scan[15]" may be non-global or may not use global clock
-    Info: Destination "Equal0~333" may be non-global or may not use global clock
+    Info: Destination "Equal0~450" may be non-global or may not use global clock
 Info: Automatically promoted some destinations of signal "reset" to use Global clock in PIN 89
     Info: Destination "clk1" may be non-global or may not use global clock
+    Info: Destination "OuOmode~233" may be non-global or may not use global clock
 Info: Completed Auto Global Promotion Operation
 Info: Starting register packing
 Info: Fitter is using Normal packing mode for logic elements with Auto setting for Auto Packed Registers logic option
@@ -788,21 +784,21 @@ Extra Info: Finished moving registers into LUTs: elapsed time is 00:00:00
 Info: Finished register packing
 Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
-Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to pin delay of 11.867 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X12_Y3; Fanout = 19; REG Node = 'scanout[1]~reg0'
-    Info: 2: + IC(2.578 ns) + CELL(0.511 ns) = 3.089 ns; Loc. = LAB_X7_Y5; Fanout = 1; COMB Node = 'Mux4~39'
-    Info: 3: + IC(2.358 ns) + CELL(0.511 ns) = 5.958 ns; Loc. = LAB_X9_Y6; Fanout = 1; COMB Node = 'Mux4~40'
-    Info: 4: + IC(0.443 ns) + CELL(0.740 ns) = 7.141 ns; Loc. = LAB_X9_Y6; Fanout = 1; COMB Node = 'Mux4~41'
-    Info: 5: + IC(2.404 ns) + CELL(2.322 ns) = 11.867 ns; Loc. = PIN_131; Fanout = 0; PIN Node = 'segout[2]'
-    Info: Total cell delay = 4.084 ns ( 34.41 % )
-    Info: Total interconnect delay = 7.783 ns ( 65.59 % )
+Info: Estimated most critical path is register to pin delay of 10.138 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X10_Y5; Fanout = 7; REG Node = 'q[3][2]'
+    Info: 2: + IC(2.359 ns) + CELL(0.740 ns) = 3.099 ns; Loc. = LAB_X8_Y7; Fanout = 1; COMB Node = 'Mux4~37'
+    Info: 3: + IC(0.672 ns) + CELL(0.511 ns) = 4.282 ns; Loc. = LAB_X8_Y7; Fanout = 1; COMB Node = 'Mux4~38'
+    Info: 4: + IC(0.269 ns) + CELL(0.914 ns) = 5.465 ns; Loc. = LAB_X8_Y7; Fanout = 1; COMB Node = 'Mux4~41'
+    Info: 5: + IC(2.351 ns) + CELL(2.322 ns) = 10.138 ns; Loc. = PIN_131; Fanout = 0; PIN Node = 'segout[2]'
+    Info: Total cell delay = 4.487 ns ( 44.26 % )
+    Info: Total interconnect delay = 5.651 ns ( 55.74 % )
 Info: Fitter routing operations beginning
-Info: Average interconnect usage is 14% of the available device resources
-    Info: Peak interconnect usage is 14% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
+Info: Average interconnect usage is 26% of the available device resources
+    Info: Peak interconnect usage is 26% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
@@ -810,9 +806,9 @@ Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped 
 Warning: Following 1 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
     Info: Pin segout[7] has VCC driving its datain port
 Info: Quartus II Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 277 megabytes
-    Info: Processing ended: Thu Oct 28 09:43:43 2021
+    Info: Peak virtual memory: 278 megabytes
+    Info: Processing ended: Thu Oct 28 10:50:07 2021
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

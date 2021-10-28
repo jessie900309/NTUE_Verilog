@@ -33,7 +33,7 @@ ON
 # case_sensitive
 # source_file
 sevenLedPattern.v
-bd8169bfea66828f9c1f4d6e5f464d9
+1c265e88f2c729b25536f9c87c4a97f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
