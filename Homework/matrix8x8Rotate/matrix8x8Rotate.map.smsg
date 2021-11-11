@@ -1,3 +1,0 @@
-Warning (10268): Verilog HDL information at matrix8x8Rotate.v(17): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at matrix8x8Rotate.v(30): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at matrix8x8Rotate.v(12): object "Mode" differs only in case from object "mode" in the same scope

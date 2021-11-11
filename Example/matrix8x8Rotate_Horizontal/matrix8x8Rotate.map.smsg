@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at matrix8x8Rotate.v(15): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at matrix8x8Rotate.v(29): always construct contains both blocking and non-blocking assignments
