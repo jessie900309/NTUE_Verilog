@@ -1,5 +1,5 @@
 Flow report for marquee
-Thu Oct 21 10:41:05 2021
+Thu Nov 25 11:25:06 2021
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; Flow Summary                                                      ;
 +-------------------------+-----------------------------------------+
-; Flow Status             ; Successful - Thu Oct 21 10:41:05 2021   ;
+; Flow Status             ; Successful - Thu Nov 25 11:25:06 2021   ;
 ; Quartus II Version      ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
 ; Revision Name           ; marquee                                 ;
 ; Top-level Entity Name   ; marquee                                 ;
@@ -46,7 +46,7 @@ applicable agreement for further details.
 ; Device                  ; EPM570T144C5                            ;
 ; Timing Models           ; Final                                   ;
 ; Met timing requirements ; Yes                                     ;
-; Total logic elements    ; 159 / 570 ( 28 % )                      ;
+; Total logic elements    ; 153 / 570 ( 27 % )                      ;
 ; Total pins              ; 14 / 116 ( 12 % )                       ;
 ; Total virtual pins      ; 0                                       ;
 ; UFM blocks              ; 0 / 1 ( 0 % )                           ;
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/21/2021 10:41:02 ;
+; Start date & time ; 11/25/2021 11:24:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; marquee             ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 150461137983376.163478406206004        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 259881634628359.163781069508208        ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                                      ; --            ; --          ; --             ;
 ; MISC_FILE                             ; D:/shapa/hw01/marquee.dpf              ; --            ; --          ; --             ;
@@ -84,11 +84,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 247 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:01     ; 1.0                     ; 254 MB              ; 00:00:00                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 222 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 195 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:03     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 229 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:02     ; 1.0                     ; 235 MB              ; 00:00:01                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 205 MB              ; 00:00:01                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 176 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -97,10 +97,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis    ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 

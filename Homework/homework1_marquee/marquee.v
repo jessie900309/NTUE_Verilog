@@ -51,7 +51,7 @@ reg OuOcount = 3'b000;
 //Mode 000 use clk1
 	always @(posedge clk1, negedge reset) begin
 		if(reset == 0) begin
-			
+			numForClk1 <= 1200000;
 			marquee <= State_init;
 			modeCtrl <= 3'b000;
 		end
