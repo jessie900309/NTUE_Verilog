@@ -2,22 +2,42 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.640 ns
+From           : center
+To             : score[7]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.260 ns
-From           : cnt_scan[15]
+Actual Time    : 19.655 ns
+From           : q[3][2]
 To             : segout[0]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
 
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.885 ns
+From           : right
+To             : score[7]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 64.65 MHz ( period = 15.468 ns )
-From           : Mode.010
-To             : mode.1000
+Actual Time    : 59.75 MHz ( period = 16.736 ns )
+From           : mode.0111
+To             : score[7]
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0

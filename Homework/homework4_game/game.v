@@ -13,17 +13,18 @@ reg [25:0] cnt_num = 12500000; //時脈速度
 //reg [2:0] L1,L2,L3,C1,C2,R1,R2,R3;
 //L1=L2=L3,C1=C2,R1=R2=R3;
 
-reg [6:0] score = 0;
+reg [7:0] score = 8'b00000000; //0~31
 
 //hw3的動畫作法
 reg [7:0] q[0:7];
 reg [2:0] Mode = 0; //000~110
 reg [3:0] mode = 0; //0~15
 
-reg [2:0] Lblock = 8'b00011111;
-reg [2:0] Cblock = 8'b11100111;
-reg [2:0] Rblock = 8'b11111000;
-reg [2:0] dark = 8'b11111111;
+//block
+reg [7:0] Lblock = 8'b00011111;
+reg [7:0] Cblock = 8'b11100111;
+reg [7:0] Rblock = 8'b11111000;
+reg [7:0] dark = 8'b11111111;
 
 
 //------------------ clock running -----------------------
@@ -46,6 +47,7 @@ reg [2:0] dark = 8'b11111111;
 				Mode <= 3'b000;
 				mode <= 0;
 				cnt_num <= 12500000;
+				score <= 8'b00000000;
 			end
 			else begin
 			
@@ -53,7 +55,7 @@ reg [2:0] dark = 8'b11111111;
 				
 					3'b000:
 						if(mode==0)begin
-							q[0] = Lblock;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
@@ -64,8 +66,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=1;
 						end
 						else if(mode==1)begin
-							q[0] = Cblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = dark;
@@ -75,8 +77,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=2;
 						end
 						else if(mode==2)begin
-							q[0] = Cblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = dark;
 							q[4] = dark;
@@ -86,8 +88,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=3;
 						end
 						else if(mode==3)begin
-							q[0] = Rblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Lblock;
 							q[4] = dark;
@@ -97,8 +99,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=4;
 						end
 						else if(mode==4)begin
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Cblock;
 							q[4] = Lblock;
@@ -108,8 +110,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=5;
 						end
 						else if(mode==5)begin
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Cblock;
 							q[4] = Cblock;
@@ -119,8 +121,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=6;
 						end
 						else if(mode==6)begin
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Cblock;
@@ -130,8 +132,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=7;
 						end
 						else if(mode==7)begin
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -144,8 +146,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=8;
 						end
 						else if(mode==8)begin
-							q[0] = Lblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -158,8 +160,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=9;
 						end
 						else if(mode==9)begin
-							q[0] = Lblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -172,8 +174,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=10;
 						end
 						else if(mode==10)begin
-							q[0] = Rblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -186,8 +188,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=11;
 						end
 						else if(mode==11)begin
-							q[0] = dark;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Lblock;
 							q[4] = Cblock;
@@ -200,7 +202,7 @@ reg [2:0] dark = 8'b11111111;
 							mode <=12;
 						end
 						else if(mode==12)begin
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Lblock;
@@ -218,7 +220,7 @@ reg [2:0] dark = 8'b11111111;
 					
 					3'b001:
 						if(mode==0)begin
-							q[0] = Lblock;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = Rblock;
@@ -232,8 +234,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=1;
 						end
 						else if(mode==1)begin
-							q[0] = Cblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = Rblock;
@@ -246,8 +248,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=2;
 						end
 						else if(mode==2)begin
-							q[0] = Cblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = dark;
 							q[4] = dark;
@@ -260,8 +262,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=3;
 						end
 						else if(mode==3)begin
-							q[0] = Rblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Lblock;
 							q[4] = dark;
@@ -274,8 +276,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=4;
 						end
 						else if(mode==4)begin
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Cblock;
 							q[4] = Lblock;
@@ -288,8 +290,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=5;
 						end
 						else if(mode==5)begin
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Cblock;
 							q[4] = Cblock;
@@ -299,8 +301,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=6;
 						end
 						else if(mode==6)begin
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Cblock;
@@ -310,8 +312,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=7;
 						end
 						else if(mode==7)begin
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -324,8 +326,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=8;
 						end
 						else if(mode==8)begin
-							q[0] = Lblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -338,8 +340,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=9;
 						end
 						else if(mode==9)begin
-							q[0] = Lblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -352,8 +354,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=10;
 						end
 						else if(mode==10)begin
-							q[0] = Rblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -366,8 +368,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=11;
 						end
 						else if(mode==11)begin
-							q[0] = dark;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Lblock;
 							q[4] = Cblock;
@@ -380,7 +382,7 @@ reg [2:0] dark = 8'b11111111;
 							mode <=12;
 						end
 						else if(mode==12)begin
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Lblock;
@@ -398,7 +400,7 @@ reg [2:0] dark = 8'b11111111;
 					
 					3'b010:
 						if(mode==0)begin 
-							q[0] = Rblock;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = Rblock;
@@ -412,8 +414,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=1;
 						end
 						else if(mode==1)begin 
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = Rblock;
@@ -426,8 +428,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=2;
 						end
 						else if(mode==2)begin 
-							q[0] = Lblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = dark;
 							q[4] = dark;
@@ -440,8 +442,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=3;
 						end
 						else if(mode==3)begin 
-							q[0] = Rblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = dark;
@@ -454,8 +456,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=4;
 						end
 						else if(mode==4)begin 
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -468,8 +470,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=5;
 						end
 						else if(mode==5)begin 
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Lblock;
 							q[4] = Cblock;
@@ -479,8 +481,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=6;
 						end
 						else if(mode==6)begin 
-							q[0] = Rblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Lblock;
@@ -490,8 +492,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=7;
 						end
 						else if(mode==7)begin 
-							q[0] = Lblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -504,8 +506,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=8;
 						end
 						else if(mode==8)begin 
-							q[0] = dark;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -518,7 +520,7 @@ reg [2:0] dark = 8'b11111111;
 							mode <=9;
 						end
 						else if(mode==9)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Rblock;
@@ -536,7 +538,7 @@ reg [2:0] dark = 8'b11111111;
 					
 					3'b011:
 						if(mode==0)begin 
-							q[0] = Cblock;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = Lblock;
@@ -550,8 +552,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=1;
 						end
 						else if(mode==1)begin 
-							q[0] = Rblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = Lblock;
@@ -564,8 +566,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=2;
 						end
 						else if(mode==2)begin 
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = dark;
 							q[4] = dark;
@@ -578,8 +580,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=3;
 						end
 						else if(mode==3)begin 
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Cblock;
 							q[4] = dark;
@@ -592,8 +594,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=4;
 						end
 						else if(mode==4)begin 
-							q[0] = Rblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Cblock;
@@ -606,8 +608,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=5;
 						end
 						else if(mode==5)begin 
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -617,8 +619,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=6;
 						end
 						else if(mode==6)begin 
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -628,8 +630,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=7;
 						end
 						else if(mode==7)begin 
-							q[0] = Rblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Cblock;
@@ -642,8 +644,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=8;
 						end
 						else if(mode==8)begin 
-							q[0] = Rblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = Rblock;
@@ -656,8 +658,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=9;
 						end
 						else if(mode==9)begin 
-							q[0] = Lblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -670,8 +672,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=10;
 						end
 						else if(mode==10)begin 
-							q[0] = dark;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Rblock;
 							q[4] = Cblock;
@@ -684,7 +686,7 @@ reg [2:0] dark = 8'b11111111;
 							mode <=11;
 						end
 						else if(mode==11)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Rblock;
@@ -702,7 +704,7 @@ reg [2:0] dark = 8'b11111111;
 					
 					3'b100:
 						if(mode==0)begin 
-							q[0] = Lblock;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = Lblock;
@@ -716,8 +718,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=1;
 						end
 						else if(mode==1)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = Lblock;
@@ -730,8 +732,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=2;
 						end
 						else if(mode==2)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = dark;
 							q[4] = dark;
@@ -744,8 +746,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=3;
 						end
 						else if(mode==3)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Lblock;
 							q[4] = dark;
@@ -758,8 +760,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=4;
 						end
 						else if(mode==4)begin 
-							q[0] = Rblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Lblock;
 							q[4] = Lblock;
@@ -772,8 +774,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=5;
 						end
 						else if(mode==5)begin 
-							q[0] = Cblock;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Lblock;
 							q[4] = Lblock;
@@ -783,8 +785,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=6;
 						end
 						else if(mode==6)begin 
-							q[0] = Cblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Lblock;
 							q[4] = Lblock;
@@ -794,8 +796,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=7;
 						end
 						else if(mode==7)begin 
-							q[0] = Lblock;
-							q[1] = Cblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Rblock;
 							q[4] = Lblock;
@@ -808,8 +810,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=8;
 						end
 						else if(mode==8)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Cblock;
 							q[3] = Cblock;
 							q[4] = Rblock;
@@ -822,8 +824,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=9;
 						end
 						else if(mode==9)begin 
-							q[0] = Rblock;
-							q[1] = Lblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Cblock;
 							q[4] = Cblock;
@@ -836,8 +838,8 @@ reg [2:0] dark = 8'b11111111;
 							mode <=10;
 						end
 						else if(mode==10)begin 
-							q[0] = 8'b11111111;
-							q[1] = Rblock;
+							q[0] = score;
+							q[1] = dark;
 							q[2] = Lblock;
 							q[3] = Lblock;
 							q[4] = Cblock;
@@ -850,7 +852,7 @@ reg [2:0] dark = 8'b11111111;
 							mode <=11;
 						end
 						else if(mode==11)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = Rblock;
 							q[3] = Lblock;
@@ -859,339 +861,49 @@ reg [2:0] dark = 8'b11111111;
 							q[6] = Cblock;
 							q[7] = Rblock;
 							if(right==0)begin
-								score <= score+1;
-							end
-							Mode <=3'b101;
-							mode <=0;
-						end
-					//100 end
-					
-					3'b101:
-						if(mode==0)begin 
-							q[0] = Cblock;
-							q[1] = dark;
-							q[2] = dark;
-							q[3] = Rblock;
-							q[4] = Lblock;
-							q[5] = Lblock;
-							q[6] = Cblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=1;
-						end
-						else if(mode==1)begin 
-							q[0] = Lblock;
-							q[1] = Cblock;
-							q[2] = dark;
-							q[3] = dark;
-							q[4] = Rblock;
-							q[5] = Lblock;
-							q[6] = Lblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=2;
-						end
-						else if(mode==2)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
-							q[2] = Cblock;
-							q[3] = dark;
-							q[4] = dark;
-							q[5] = Rblock;
-							q[6] = Lblock;
-							q[7] = Lblock;
-							if(left==0)begin
-								score <= score+1;
-							end
-							mode <=3;
-						end
-						else if(mode==3)begin 
-							q[0] = Cblock;
-							q[1] = Lblock;
-							q[2] = Lblock;
-							q[3] = Cblock;
-							q[4] = dark;
-							q[5] = dark;
-							q[6] = Rblock;
-							q[7] = Lblock;
-							if(left==0)begin
-								score <= score+1;
-							end
-							mode <=4;
-						end
-						else if(mode==4)begin 
-							q[0] = Cblock;
-							q[1] = Cblock;
-							q[2] = Lblock;
-							q[3] = Lblock;
-							q[4] = Cblock;
-							q[5] = dark;
-							q[6] = dark;
-							q[7] = Rblock;
-							if(right==0)begin
-								score <= score+1;
-							end
-							mode <=5;
-						end
-						else if(mode==5)begin 
-							q[0] = Cblock;
-							q[1] = Cblock;
-							q[2] = Cblock;
-							q[3] = Lblock;
-							q[4] = Lblock;
-							q[5] = Cblock;
-							q[6] = dark;
-							q[7] = dark;
-							mode <=6;
-						end
-						else if(mode==6)begin 
-							q[0] = Cblock;
-							q[1] = Cblock;
-							q[2] = Cblock;
-							q[3] = Cblock;
-							q[4] = Lblock;
-							q[5] = Lblock;
-							q[6] = Cblock;
-							q[7] = dark;
-							mode <=7;
-						end
-						else if(mode==7)begin 
-							q[0] = Rblock;
-							q[1] = Cblock;
-							q[2] = Cblock;
-							q[3] = Cblock;
-							q[4] = Cblock;
-							q[5] = Lblock;
-							q[6] = Lblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=8;
-						end
-						else if(mode==8)begin 
-							q[0] = dark;
-							q[1] = Rblock;
-							q[2] = Cblock;
-							q[3] = Cblock;
-							q[4] = Cblock;
-							q[5] = Cblock;
-							q[6] = Lblock;
-							q[7] = Lblock;
-							if(left==0)begin
-								score <= score+1;
-							end
-							mode <=9;
-						end
-						else if(mode==9)begin 
-							q[0] = dark;
-							q[1] = dark;
-							q[2] = Rblock;
-							q[3] = Cblock;
-							q[4] = Cblock;
-							q[5] = Cblock;
-							q[6] = Cblock;
-							q[7] = Lblock;
-							if(left==0)begin
-								score <= score+1;
-							end
-							Mode <=3'b110;
-							mode <=0;
-						end
-					//101 end
-					
-					3'b110:
-						if(mode==0)begin 
-							q[0] = Lblock;
-							q[1] = dark;
-							q[2] = dark;
-							q[3] = Rblock;
-							q[4] = Cblock;
-							q[5] = Cblock;
-							q[6] = Cblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=1;
-						end
-						else if(mode==1)begin 
-							q[0] = Rblock;
-							q[1] = Lblock;
-							q[2] = dark;
-							q[3] = dark;
-							q[4] = Rblock;
-							q[5] = Cblock;
-							q[6] = Cblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=2;
-						end
-						else if(mode==2)begin 
-							q[0] = Cblock;
-							q[1] = Rblock;
-							q[2] = Lblock;
-							q[3] = dark;
-							q[4] = dark;
-							q[5] = Rblock;
-							q[6] = Cblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=3;
-						end
-						else if(mode==3)begin 
-							q[0] = Lblock;
-							q[1] = Cblock;
-							q[2] = Rblock;
-							q[3] = Lblock;
-							q[4] = dark;
-							q[5] = dark;
-							q[6] = Rblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=4;
-						end
-						else if(mode==4)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
-							q[2] = Cblock;
-							q[3] = Rblock;
-							q[4] = Lblock;
-							q[5] = dark;
-							q[6] = dark;
-							q[7] = Rblock;
-							if(right==0)begin
-								score <= score+1;
-							end
-							mode <=5;
-						end
-						else if(mode==5)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
-							q[2] = Lblock;
-							q[3] = Cblock;
-							q[4] = Rblock;
-							q[5] = Lblock;
-							q[6] = dark;
-							q[7] = dark;
-							mode <=6;
-						end
-						else if(mode==6)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
-							q[2] = Lblock;
-							q[3] = Lblock;
-							q[4] = Cblock;
-							q[5] = Rblock;
-							q[6] = Lblock;
-							q[7] = dark;
-							mode <=7;
-						end
-						else if(mode==7)begin 
-							q[0] = Lblock;
-							q[1] = Lblock;
-							q[2] = Lblock;
-							q[3] = Lblock;
-							q[4] = Lblock;
-							q[5] = Cblock;
-							q[6] = Rblock;
-							q[7] = Lblock;
-							if(left==0)begin
-								score <= score+1;
-							end
-							mode <=8;
-						end
-						else if(mode==8)begin 
-							q[0] = Cblock;
-							q[1] = Lblock;
-							q[2] = Lblock;
-							q[3] = Lblock;
-							q[4] = Lblock;
-							q[5] = Lblock;
-							q[6] = Cblock;
-							q[7] = Rblock;
-							if(right==0)begin
-								score <= score+1;
-							end
-							mode <=9;
-						end
-						else if(mode==9)begin 
-							q[0] = dark;
-							q[1] = Cblock;
-							q[2] = Lblock;
-							q[3] = Lblock;
-							q[4] = Lblock;
-							q[5] = Lblock;
-							q[6] = Lblock;
-							q[7] = Cblock;
-							if(center==0)begin
-								score <= score+1;
-							end
-							mode <=10;
-						end
-						else if(mode==10)begin 
-							q[0] = dark;
-							q[1] = dark;
-							q[2] = Cblock;
-							q[3] = Lblock;
-							q[4] = Lblock;
-							q[5] = Lblock;
-							q[6] = Lblock;
-							q[7] = Lblock;
-							if(left==0)begin
 								score <= score+1;
 							end
 							Mode <=3'b111;
 							mode <=0;
 						end
-					//110 end
+					//100 end
 					
 					3'b111:
 						if(mode==0)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
-							q[3] = Cblock;
+							q[3] = Rblock;
 							q[4] = Lblock;
 							q[5] = Lblock;
-							q[6] = Lblock;
-							q[7] = Lblock;
+							q[6] = Cblock;
+							q[7] = Cblock;
 							if(left==0)begin
 								score <= score+1;
 							end
 							mode <=1;
 						end
 						else if(mode==1)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
-							q[4] = Cblock;
+							q[4] = Rblock;
 							q[5] = Lblock;
 							q[6] = Lblock;
-							q[7] = Lblock;
+							q[7] = Cblock;
 							if(left==0)begin
 								score <= score+1;
 							end
 							mode <=2;
 						end
 						else if(mode==2)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = dark;
-							q[5] = Cblock;
+							q[5] = Rblock;
 							q[6] = Lblock;
 							q[7] = Lblock;
 							if(left==0)begin
@@ -1200,13 +912,13 @@ reg [2:0] dark = 8'b11111111;
 							mode <=3;
 						end
 						else if(mode==3)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = dark;
 							q[5] = dark;
-							q[6] = Cblock;
+							q[6] = Rblock;
 							q[7] = Lblock;
 							if(left==0)begin
 								score <= score+1;
@@ -1214,21 +926,21 @@ reg [2:0] dark = 8'b11111111;
 							mode <=4;
 						end
 						else if(mode==4)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
 							q[4] = dark;
 							q[5] = dark;
 							q[6] = dark;
-							q[7] = Cblock;
+							q[7] = Rblock;
 							if(center==0)begin
 								score <= score+1;
 							end
 							mode <=5;
 						end
 						else if(mode==5)begin 
-							q[0] = dark;
+							q[0] = score;
 							q[1] = dark;
 							q[2] = dark;
 							q[3] = dark;
@@ -1251,40 +963,7 @@ reg [2:0] dark = 8'b11111111;
 							q[7] = dark;
 							mode <=7;
 						end
-						else if(mode==7)begin //E 
-							q[0] = 8'b10000011;
-							q[1] = 8'b10111111;
-							q[2] = 8'b10111111;
-							q[3] = 8'b10000111;
-							q[4] = 8'b10111111;
-							q[5] = 8'b10111111;
-							q[6] = 8'b10111111;
-							q[7] = 8'b10000011;
-							mode <=8;
-						end
-						else if(mode==8)begin //N
-							q[0] = 8'b10111011;
-							q[1] = 8'b10111011;
-							q[2] = 8'b10011011;
-							q[3] = 8'b10101011;
-							q[4] = 8'b10110011;
-							q[5] = 8'b10111011;
-							q[6] = 8'b10111011;
-							q[7] = 8'b10111011;
-							mode <=9;
-						end
-						else if(mode==9)begin //D
-							q[0] = 8'b10000111;
-							q[1] = 8'b10111011;
-							q[2] = 8'b10111101;
-							q[3] = 8'b10111101;
-							q[4] = 8'b10111101;
-							q[5] = 8'b10111101;
-							q[6] = 8'b10111011;
-							q[7] = 8'b10000111;
-							mode <=10;
-						end
-						else if(mode==10)begin 
+						else if(mode==7)begin 
 							q[0] = dark;
 							q[1] = dark;
 							q[2] = dark;
@@ -1295,6 +974,8 @@ reg [2:0] dark = 8'b11111111;
 							q[7] = dark;
 							Mode <=3'b000;
 							mode <=0;
+							cnt_num <= 12500000;
+							score <= 0;
 						end
 						//END end
 						

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for game
-Thu Dec 02 13:38:48 2021
+Thu Dec 16 10:58:52 2021
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -45,12 +45,12 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                          ;
 +-----------------------------+-----------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Dec 02 13:38:48 2021   ;
+; Analysis & Synthesis Status ; Successful - Thu Dec 16 10:58:52 2021   ;
 ; Quartus II Version          ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
 ; Revision Name               ; game                                    ;
 ; Top-level Entity Name       ; musicGameWithoutMusic                   ;
 ; Family                      ; MAX II                                  ;
-; Total logic elements        ; 533                                     ;
+; Total logic elements        ; 478                                     ;
 ; Total pins                  ; 16                                      ;
 ; Total virtual pins          ; 0                                       ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                           ;
@@ -123,13 +123,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------+-----------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ;
-+----------------------------------+-----------------+------------------------+------------------------------+
-; game.v                           ; yes             ; User Verilog HDL File  ; D:/homework4_game/game.v     ;
-+----------------------------------+-----------------+------------------------+------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                          ;
++----------------------------------+-----------------+------------------------+-----------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path      ;
++----------------------------------+-----------------+------------------------+-----------------------------------+
+; game.v                           ; yes             ; User Verilog HDL File  ; D:/shapaOuO/homework4_game/game.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------+
 
 
 +--------------------------------------------------------+
@@ -137,33 +137,33 @@ applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Total logic elements                        ; 533      ;
-;     -- Combinational with no register       ; 456      ;
+; Total logic elements                        ; 478      ;
+;     -- Combinational with no register       ; 397      ;
 ;     -- Register only                        ; 14       ;
-;     -- Combinational with a register        ; 63       ;
+;     -- Combinational with a register        ; 67       ;
 ;                                             ;          ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 349      ;
-;     -- 3 input functions                    ; 106      ;
-;     -- 2 input functions                    ; 61       ;
-;     -- 1 input functions                    ; 3        ;
+;     -- 4 input functions                    ; 305      ;
+;     -- 3 input functions                    ; 91       ;
+;     -- 2 input functions                    ; 66       ;
+;     -- 1 input functions                    ; 2        ;
 ;     -- 0 input functions                    ; 0        ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 508      ;
-;     -- arithmetic mode                      ; 25       ;
+;     -- normal mode                          ; 446      ;
+;     -- arithmetic mode                      ; 32       ;
 ;     -- qfbk mode                            ; 0        ;
 ;     -- register cascade mode                ; 0        ;
-;     -- synchronous clear/load mode          ; 2        ;
-;     -- asynchronous clear/load mode         ; 50       ;
+;     -- synchronous clear/load mode          ; 8        ;
+;     -- asynchronous clear/load mode         ; 54       ;
 ;                                             ;          ;
-; Total registers                             ; 77       ;
-; Total logic cells in carry chains           ; 26       ;
+; Total registers                             ; 81       ;
+; Total logic cells in carry chains           ; 34       ;
 ; I/O pins                                    ; 16       ;
-; Maximum fan-out node                        ; Mode.011 ;
-; Maximum fan-out                             ; 66       ;
-; Total fan-out                               ; 1999     ;
-; Average fan-out                             ; 3.64     ;
+; Maximum fan-out node                        ; Mode.010 ;
+; Maximum fan-out                             ; 59       ;
+; Total fan-out                               ; 1817     ;
+; Average fan-out                             ; 3.68     ;
 +---------------------------------------------+----------+
 
 
@@ -172,7 +172,7 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name    ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------+--------------+
-; |musicGameWithoutMusic     ; 533 (533)   ; 77           ; 0          ; 16   ; 0            ; 456 (456)    ; 14 (14)           ; 63 (63)          ; 26 (26)         ; 0 (0)      ; |musicGameWithoutMusic ; work         ;
+; |musicGameWithoutMusic     ; 478 (478)   ; 81           ; 0          ; 16   ; 0            ; 397 (397)    ; 14 (14)           ; 67 (67)          ; 34 (34)         ; 0 (0)      ; |musicGameWithoutMusic ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -200,71 +200,82 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------+
-; State Machine - |musicGameWithoutMusic|Mode                                                      ;
-+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-; Name     ; Mode.111 ; Mode.110 ; Mode.101 ; Mode.100 ; Mode.011 ; Mode.010 ; Mode.001 ; Mode.000 ;
-+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-; Mode.000 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
-; Mode.001 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
-; Mode.010 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
-; Mode.011 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
-; Mode.100 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
-; Mode.101 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; Mode.110 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; Mode.111 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-+----------+----------+----------+----------+----------+----------+----------+----------+----------+
++----------------------------------------------------------------------------+
+; State Machine - |musicGameWithoutMusic|Mode                                ;
++----------+----------+----------+----------+----------+----------+----------+
+; Name     ; Mode.111 ; Mode.100 ; Mode.011 ; Mode.010 ; Mode.001 ; Mode.000 ;
++----------+----------+----------+----------+----------+----------+----------+
+; Mode.000 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; Mode.001 ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; Mode.010 ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; Mode.011 ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; Mode.100 ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; Mode.111 ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+
 
 
-+--------------------------------------------------------------+
-; Registers Removed During Synthesis                           ;
-+----------------------------------------+---------------------+
-; Register name                          ; Reason for Removal  ;
-+----------------------------------------+---------------------+
-; q[0][4]                                ; Merged with q[0][5] ;
-; q[0][3]                                ; Merged with q[0][5] ;
-; q[0][0]                                ; Merged with q[0][1] ;
-; q[5][7]                                ; Merged with q[1][7] ;
-; q[5][5]                                ; Merged with q[1][7] ;
-; q[5][4]                                ; Merged with q[1][7] ;
-; q[5][3]                                ; Merged with q[1][7] ;
-; q[1][5]                                ; Merged with q[1][7] ;
-; q[6][7]                                ; Merged with q[1][7] ;
-; q[6][5]                                ; Merged with q[1][7] ;
-; q[6][4]                                ; Merged with q[1][7] ;
-; q[1][3]                                ; Merged with q[1][7] ;
-; q[6][3]                                ; Merged with q[1][7] ;
-; q[7][7]                                ; Merged with q[1][7] ;
-; q[2][7]                                ; Merged with q[1][7] ;
-; q[2][4]                                ; Merged with q[1][7] ;
-; q[2][3]                                ; Merged with q[1][7] ;
-; q[3][7]                                ; Merged with q[1][7] ;
-; q[1][4]                                ; Merged with q[1][7] ;
-; q[4][7]                                ; Merged with q[1][7] ;
-; q[4][5]                                ; Merged with q[1][7] ;
-; q[4][4]                                ; Merged with q[1][7] ;
-; q[3][6]                                ; Merged with q[1][6] ;
-; q[5][6]                                ; Merged with q[1][6] ;
-; q[6][6]                                ; Merged with q[1][6] ;
-; q[7][6]                                ; Merged with q[1][6] ;
-; q[2][6]                                ; Merged with q[1][6] ;
-; q[4][6]                                ; Merged with q[1][6] ;
-; q[1][0]                                ; Merged with q[1][1] ;
-; q[4][3]                                ; Merged with q[2][5] ;
-; q[3][3]                                ; Merged with q[3][5] ;
-; q[6][0]                                ; Merged with q[6][1] ;
-; q[7][4]                                ; Merged with q[7][5] ;
-; q[7][3]                                ; Merged with q[7][5] ;
-; q[7][0]                                ; Merged with q[7][1] ;
-; mode~612                               ; Lost fanout         ;
-; mode~613                               ; Lost fanout         ;
-; mode~614                               ; Lost fanout         ;
-; mode~615                               ; Lost fanout         ;
-; Mode~474                               ; Lost fanout         ;
-; Mode~475                               ; Lost fanout         ;
-; Mode~476                               ; Lost fanout         ;
-; Total Number of Removed Registers = 42 ;                     ;
-+----------------------------------------+---------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; cnt_num[24..25]                        ; Stuck at GND due to stuck port data_in ;
+; cnt_num[23]                            ; Stuck at VCC due to stuck port data_in ;
+; cnt_num[22]                            ; Stuck at GND due to stuck port data_in ;
+; cnt_num[17..21]                        ; Stuck at VCC due to stuck port data_in ;
+; cnt_num[16]                            ; Stuck at GND due to stuck port data_in ;
+; cnt_num[15]                            ; Stuck at VCC due to stuck port data_in ;
+; cnt_num[14]                            ; Stuck at GND due to stuck port data_in ;
+; cnt_num[10..13]                        ; Stuck at VCC due to stuck port data_in ;
+; cnt_num[6..9]                          ; Stuck at GND due to stuck port data_in ;
+; cnt_num[5]                             ; Stuck at VCC due to stuck port data_in ;
+; cnt_num[0..4]                          ; Stuck at GND due to stuck port data_in ;
+; q[1][6]                                ; Merged with q[1][7]                    ;
+; q[1][4]                                ; Merged with q[1][7]                    ;
+; q[1][2]                                ; Merged with q[1][7]                    ;
+; q[1][0]                                ; Merged with q[1][7]                    ;
+; q[1][5]                                ; Merged with q[1][7]                    ;
+; q[1][3]                                ; Merged with q[1][7]                    ;
+; q[1][1]                                ; Merged with q[1][7]                    ;
+; q[2][6]                                ; Merged with q[2][7]                    ;
+; q[2][5]                                ; Merged with q[2][7]                    ;
+; q[2][3]                                ; Merged with q[2][4]                    ;
+; q[2][1]                                ; Merged with q[2][2]                    ;
+; q[2][0]                                ; Merged with q[2][2]                    ;
+; q[3][6]                                ; Merged with q[3][7]                    ;
+; q[3][5]                                ; Merged with q[3][7]                    ;
+; q[3][3]                                ; Merged with q[3][4]                    ;
+; q[3][1]                                ; Merged with q[3][2]                    ;
+; q[3][0]                                ; Merged with q[3][2]                    ;
+; q[4][6]                                ; Merged with q[4][7]                    ;
+; q[4][5]                                ; Merged with q[4][7]                    ;
+; q[4][3]                                ; Merged with q[4][4]                    ;
+; q[4][0]                                ; Merged with q[4][2]                    ;
+; q[4][1]                                ; Merged with q[4][2]                    ;
+; q[5][6]                                ; Merged with q[5][7]                    ;
+; q[5][5]                                ; Merged with q[5][7]                    ;
+; q[5][3]                                ; Merged with q[5][4]                    ;
+; q[5][0]                                ; Merged with q[5][2]                    ;
+; q[5][1]                                ; Merged with q[5][2]                    ;
+; q[6][6]                                ; Merged with q[6][7]                    ;
+; q[6][5]                                ; Merged with q[6][7]                    ;
+; q[6][3]                                ; Merged with q[6][4]                    ;
+; q[6][0]                                ; Merged with q[6][2]                    ;
+; q[6][1]                                ; Merged with q[6][2]                    ;
+; q[7][6]                                ; Merged with q[7][7]                    ;
+; q[7][5]                                ; Merged with q[7][7]                    ;
+; q[7][3]                                ; Merged with q[7][4]                    ;
+; q[7][1]                                ; Merged with q[7][2]                    ;
+; q[7][0]                                ; Merged with q[7][2]                    ;
+; mode~570                               ; Lost fanout                            ;
+; mode~571                               ; Lost fanout                            ;
+; mode~572                               ; Lost fanout                            ;
+; mode~573                               ; Lost fanout                            ;
+; Mode~322                               ; Lost fanout                            ;
+; Mode~323                               ; Lost fanout                            ;
+; Mode~324                               ; Lost fanout                            ;
+; Total Number of Removed Registers = 70 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -272,12 +283,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 77    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 2     ;
-; Number of registers using Asynchronous Clear ; 50    ;
+; Total registers                              ; 81    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 54    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 22    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -287,36 +298,34 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; q[3][0]                                 ; 2       ;
-; q[0][1]                                 ; 4       ;
-; q[1][1]                                 ; 5       ;
-; q[2][0]                                 ; 4       ;
-; q[6][1]                                 ; 4       ;
-; q[7][1]                                 ; 2       ;
-; q[4][0]                                 ; 3       ;
-; q[5][0]                                 ; 4       ;
-; q[3][1]                                 ; 4       ;
-; q[2][1]                                 ; 5       ;
-; q[4][1]                                 ; 3       ;
-; q[5][1]                                 ; 5       ;
-; q[6][2]                                 ; 4       ;
-; q[5][2]                                 ; 5       ;
-; q[4][2]                                 ; 3       ;
-; q[7][2]                                 ; 4       ;
-; q[2][2]                                 ; 5       ;
-; q[1][2]                                 ; 5       ;
-; q[0][2]                                 ; 4       ;
-; q[3][2]                                 ; 4       ;
-; q[3][5]                                 ; 1       ;
-; q[7][5]                                 ; 3       ;
-; q[0][5]                                 ; 4       ;
-; q[2][5]                                 ; 2       ;
-; q[1][7]                                 ; 4       ;
-; q[3][4]                                 ; 1       ;
-; q[1][6]                                 ; 2       ;
-; q[0][6]                                 ; 2       ;
-; q[0][7]                                 ; 2       ;
-; Total number of inverted registers = 29 ;         ;
+; q[2][2]                                 ; 1       ;
+; q[3][2]                                 ; 1       ;
+; q[1][7]                                 ; 9       ;
+; q[0][0]                                 ; 1       ;
+; q[6][2]                                 ; 6       ;
+; q[5][2]                                 ; 4       ;
+; q[4][2]                                 ; 5       ;
+; q[7][2]                                 ; 3       ;
+; q[0][1]                                 ; 1       ;
+; q[0][2]                                 ; 1       ;
+; q[2][4]                                 ; 4       ;
+; q[3][4]                                 ; 5       ;
+; q[0][3]                                 ; 1       ;
+; q[6][4]                                 ; 1       ;
+; q[5][4]                                 ; 2       ;
+; q[4][4]                                 ; 4       ;
+; q[7][4]                                 ; 5       ;
+; q[0][4]                                 ; 1       ;
+; q[2][7]                                 ; 1       ;
+; q[3][7]                                 ; 1       ;
+; q[0][5]                                 ; 1       ;
+; q[6][7]                                 ; 5       ;
+; q[5][7]                                 ; 3       ;
+; q[4][7]                                 ; 1       ;
+; q[7][7]                                 ; 3       ;
+; q[0][6]                                 ; 1       ;
+; q[0][7]                                 ; 1       ;
+; Total number of inverted registers = 27 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -325,13 +334,17 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 60:1               ; 4 bits    ; 160 LEs       ; 28 LEs               ; 132 LEs                ; Yes        ; |musicGameWithoutMusic|q[3][4]    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |musicGameWithoutMusic|Mux7       ;
-; 50:1               ; 9 bits    ; 297 LEs       ; 216 LEs              ; 81 LEs                 ; No         ; |musicGameWithoutMusic|Selector70 ;
-; 61:1               ; 2 bits    ; 80 LEs        ; 4 LEs                ; 76 LEs                 ; No         ; |musicGameWithoutMusic|Selector83 ;
-; 62:1               ; 2 bits    ; 82 LEs        ; 4 LEs                ; 78 LEs                 ; No         ; |musicGameWithoutMusic|Selector84 ;
-; 63:1               ; 2 bits    ; 84 LEs        ; 4 LEs                ; 80 LEs                 ; No         ; |musicGameWithoutMusic|Selector82 ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 4 LEs                ; 80 LEs                 ; No         ; |musicGameWithoutMusic|Selector79 ;
+; 26:1               ; 8 bits    ; 136 LEs       ; 8 LEs                ; 128 LEs                ; Yes        ; |musicGameWithoutMusic|score[2]   ;
+; 47:1               ; 8 bits    ; 248 LEs       ; 8 LEs                ; 240 LEs                ; Yes        ; |musicGameWithoutMusic|q[0][7]    ;
+; 60:1               ; 3 bits    ; 120 LEs       ; 78 LEs               ; 42 LEs                 ; Yes        ; |musicGameWithoutMusic|q[2][2]    ;
+; 61:1               ; 3 bits    ; 120 LEs       ; 96 LEs               ; 24 LEs                 ; Yes        ; |musicGameWithoutMusic|q[4][7]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |musicGameWithoutMusic|Mux5       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |musicGameWithoutMusic|Mux7       ;
+; 37:1               ; 2 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |musicGameWithoutMusic|Selector74 ;
+; 47:1               ; 7 bits    ; 217 LEs       ; 140 LEs              ; 77 LEs                 ; No         ; |musicGameWithoutMusic|Selector70 ;
+; 47:1               ; 2 bits    ; 62 LEs        ; 4 LEs                ; 58 LEs                 ; No         ; |musicGameWithoutMusic|Selector85 ;
+; 60:1               ; 2 bits    ; 80 LEs        ; 4 LEs                ; 76 LEs                 ; No         ; |musicGameWithoutMusic|Selector90 ;
+; 61:1               ; 2 bits    ; 80 LEs        ; 4 LEs                ; 76 LEs                 ; No         ; |musicGameWithoutMusic|Selector86 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
@@ -341,138 +354,86 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
-    Info: Processing started: Thu Dec 02 13:37:55 2021
+    Info: Processing started: Thu Dec 16 10:58:48 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off game -c game
 Info: Found 1 design units, including 1 entities, in source file game.v
     Info: Found entity 1: musicGameWithoutMusic
 Info: Elaborating entity "musicGameWithoutMusic" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at game.v(23): truncated value with size 8 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at game.v(24): truncated value with size 8 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at game.v(25): truncated value with size 8 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at game.v(26): truncated value with size 8 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at game.v(31): truncated value with size 32 to match size of target (26)
-Warning (10230): Verilog HDL assignment warning at game.v(142): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(156): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(170): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(184): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(198): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(212): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(230): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(244): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(258): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(272): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(286): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(322): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(336): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(350): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(364): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(378): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(392): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(410): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(424): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(438): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(452): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(466): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(502): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(516): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(530): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(548): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(562): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(576): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(590): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(604): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(640): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(654): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(668): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(682): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(696): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(714): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(728): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(742): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(756): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(770): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(806): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(820): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(834): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(848): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(862): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(880): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(894): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(908): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(922): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(936): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(972): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(986): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1000): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1018): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1032): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1046): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1060): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1074): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1110): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1124): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1138): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1152): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1170): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1184): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1198): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1212): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at game.v(1226): truncated value with size 32 to match size of target (7)
-Warning (10240): Verilog HDL Always Construct warning at game.v(40): inferring latch(es) for variable "cnt_num", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "cnt_num[0]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[1]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[2]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[3]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[4]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[5]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[6]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[7]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[8]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[9]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[10]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[11]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[12]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[13]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[14]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[15]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[16]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[17]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[18]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[19]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[20]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[21]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[22]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[23]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[24]" at game.v(40)
-Info (10041): Inferred latch for "cnt_num[25]" at game.v(40)
+Warning (10230): Verilog HDL assignment warning at game.v(32): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at game.v(144): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(158): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(172): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(186): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(200): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(214): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(232): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(246): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(260): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(274): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(288): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(324): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(338): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(352): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(366): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(380): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(394): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(412): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(426): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(440): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(454): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(468): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(504): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(518): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(532): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(550): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(564): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(578): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(592): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(606): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(642): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(656): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(670): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(684): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(698): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(716): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(730): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(744): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(758): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(772): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(808): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(822): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(836): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(850): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(864): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(882): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(896): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(910): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(924): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at game.v(938): truncated value with size 32 to match size of target (8)
 Info: Registers with preset signals will power-up high
 Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
-    Info: Register "mode~612" lost all its fanouts during netlist optimizations.
-    Info: Register "mode~613" lost all its fanouts during netlist optimizations.
-    Info: Register "mode~614" lost all its fanouts during netlist optimizations.
-    Info: Register "mode~615" lost all its fanouts during netlist optimizations.
-    Info: Register "Mode~474" lost all its fanouts during netlist optimizations.
-    Info: Register "Mode~475" lost all its fanouts during netlist optimizations.
-    Info: Register "Mode~476" lost all its fanouts during netlist optimizations.
-Warning: Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "left"
-    Warning (15610): No output dependent on input pin "center"
-    Warning (15610): No output dependent on input pin "right"
-Info: Implemented 549 device resources after synthesis - the final resource count might be different
+    Info: Register "mode~570" lost all its fanouts during netlist optimizations.
+    Info: Register "mode~571" lost all its fanouts during netlist optimizations.
+    Info: Register "mode~572" lost all its fanouts during netlist optimizations.
+    Info: Register "mode~573" lost all its fanouts during netlist optimizations.
+    Info: Register "Mode~322" lost all its fanouts during netlist optimizations.
+    Info: Register "Mode~323" lost all its fanouts during netlist optimizations.
+    Info: Register "Mode~324" lost all its fanouts during netlist optimizations.
+Info: Implemented 494 device resources after synthesis - the final resource count might be different
     Info: Implemented 5 input pins
     Info: Implemented 11 output pins
-    Info: Implemented 533 logic cells
-Info: Generated suppressed messages file D:/homework4_game/game.map.smsg
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 231 megabytes
-    Info: Processing ended: Thu Dec 02 13:38:48 2021
-    Info: Elapsed time: 00:00:53
-    Info: Total CPU time (on all processors): 00:00:52
+    Info: Implemented 478 logic cells
+Info: Generated suppressed messages file D:/shapaOuO/homework4_game/game.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 252 megabytes
+    Info: Processing ended: Thu Dec 16 10:58:52 2021
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/homework4_game/game.map.smsg.
+The suppressed messages can be found in D:/shapaOuO/homework4_game/game.map.smsg.
 
 

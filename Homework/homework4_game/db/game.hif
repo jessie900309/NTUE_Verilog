@@ -33,7 +33,7 @@ ON
 # case_sensitive
 # source_file
 game.v
-70159f4317714ee021188ec35614d2
+b09bb54fb7bb131db45d3afe8aa459
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

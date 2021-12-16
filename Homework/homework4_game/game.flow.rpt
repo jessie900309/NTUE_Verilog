@@ -1,5 +1,5 @@
 Flow report for game
-Thu Dec 02 13:39:03 2021
+Thu Dec 16 10:58:57 2021
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; Flow Summary                                                      ;
 +-------------------------+-----------------------------------------+
-; Flow Status             ; Successful - Thu Dec 02 13:39:03 2021   ;
+; Flow Status             ; Successful - Thu Dec 16 10:58:57 2021   ;
 ; Quartus II Version      ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
 ; Revision Name           ; game                                    ;
 ; Top-level Entity Name   ; musicGameWithoutMusic                   ;
@@ -46,7 +46,7 @@ applicable agreement for further details.
 ; Device                  ; EPM570T144C5                            ;
 ; Timing Models           ; Final                                   ;
 ; Met timing requirements ; Yes                                     ;
-; Total logic elements    ; 525 / 570 ( 92 % )                      ;
+; Total logic elements    ; 470 / 570 ( 82 % )                      ;
 ; Total pins              ; 16 / 116 ( 14 % )                       ;
 ; Total virtual pins      ; 0                                       ;
 ; UFM blocks              ; 0 / 1 ( 0 % )                           ;
@@ -58,24 +58,25 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/02/2021 13:37:56 ;
+; Start date & time ; 12/16/2021 10:58:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; game                ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                       ;
-+---------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                       ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+---------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 259881634628359.163842347619432 ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP                ; 85                              ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP                ; 0                               ; --            ; --          ; --             ;
-; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                            ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                      ; musicGameWithoutMusic           ; game          ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS    ; Off                             ; --            ; --          ; eda_blast_fpga ;
-+---------------------------------------+---------------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++---------------------------------------+-------------------------------------+---------------+-------------+----------------+
+; Assignment Name                       ; Value                               ; Default Value ; Entity Name ; Section Id     ;
++---------------------------------------+-------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                 ; 150461137983376.163962352800772     ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                                  ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                                   ; --            ; --          ; --             ;
+; MISC_FILE                             ; D:/shapaOuO/homework4_game/game.dpf ; --            ; --          ; --             ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                                ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                      ; musicGameWithoutMusic               ; game          ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS    ; Off                                 ; --            ; --          ; eda_blast_fpga ;
++---------------------------------------+-------------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -83,11 +84,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:53     ; 1.0                     ; 231 MB              ; 00:00:52                           ;
-; Fitter                  ; 00:00:07     ; 1.0                     ; 236 MB              ; 00:00:07                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 204 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 177 MB              ; 00:00:02                           ;
-; Total                   ; 00:01:02     ; --                      ; --                  ; 00:01:02                           ;
+; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 252 MB              ; 00:00:04                           ;
+; Fitter                  ; 00:00:02     ; 1.0                     ; 258 MB              ; 00:00:02                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 229 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 196 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:08     ; --                      ; --                  ; 00:00:07                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -96,10 +97,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; DESKTOP-PTRI1FK  ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis    ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; C614-05          ; Windows Vista ; 6.2        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 

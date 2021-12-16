@@ -16,12 +16,10 @@ mode.1011 0 1 0 0 0 0 0 0 0 0 0 0 1
 mode.1100 1 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |musicGameWithoutMusic|Mode
-Name Mode.111 Mode.110 Mode.101 Mode.100 Mode.011 Mode.010 Mode.001 Mode.000 
-Mode.000 0 0 0 0 0 0 0 0 
-Mode.001 0 0 0 0 0 0 1 1 
-Mode.010 0 0 0 0 0 1 0 1 
-Mode.011 0 0 0 0 1 0 0 1 
-Mode.100 0 0 0 1 0 0 0 1 
-Mode.101 0 0 1 0 0 0 0 1 
-Mode.110 0 1 0 0 0 0 0 1 
-Mode.111 1 0 0 0 0 0 0 1 
+Name Mode.111 Mode.100 Mode.011 Mode.010 Mode.001 Mode.000 
+Mode.000 0 0 0 0 0 0 
+Mode.001 0 0 0 0 1 1 
+Mode.010 0 0 0 1 0 1 
+Mode.011 0 0 1 0 0 1 
+Mode.100 0 1 0 0 0 1 
+Mode.111 1 0 0 0 0 1 
