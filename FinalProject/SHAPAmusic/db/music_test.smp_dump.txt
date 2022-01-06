@@ -1,0 +1,23 @@
+
+State Machine - |music|mode
+Name mode.1100 mode.1011 mode.1010 mode.1001 mode.1000 mode.0111 mode.0110 mode.0101 mode.0100 mode.0011 mode.0010 mode.0001 mode.0000 
+mode.0000 0 0 0 0 0 0 0 0 0 0 0 0 0 
+mode.0001 0 0 0 0 0 0 0 0 0 0 0 1 1 
+mode.0010 0 0 0 0 0 0 0 0 0 0 1 0 1 
+mode.0011 0 0 0 0 0 0 0 0 0 1 0 0 1 
+mode.0100 0 0 0 0 0 0 0 0 1 0 0 0 1 
+mode.0101 0 0 0 0 0 0 0 1 0 0 0 0 1 
+mode.0110 0 0 0 0 0 0 1 0 0 0 0 0 1 
+mode.0111 0 0 0 0 0 1 0 0 0 0 0 0 1 
+mode.1000 0 0 0 0 1 0 0 0 0 0 0 0 1 
+mode.1001 0 0 0 1 0 0 0 0 0 0 0 0 1 
+mode.1010 0 0 1 0 0 0 0 0 0 0 0 0 1 
+mode.1011 0 1 0 0 0 0 0 0 0 0 0 0 1 
+mode.1100 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |music|Mode
+Name Mode.11 Mode.10 Mode.01 Mode.00 
+Mode.00 0 0 0 0 
+Mode.01 0 0 1 1 
+Mode.10 0 1 0 1 
+Mode.11 1 0 0 1 

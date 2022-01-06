@@ -1,0 +1,532 @@
+Analysis & Synthesis report for music_test
+Thu Jan 06 09:51:05 2022
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |music|mode
+  8. State Machine - |music|Mode
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                          ;
++-----------------------------+-----------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Jan 06 09:51:05 2022   ;
+; Quartus II Version          ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
+; Revision Name               ; music_test                              ;
+; Top-level Entity Name       ; music                                   ;
+; Family                      ; MAX II                                  ;
+; Total logic elements        ; 525                                     ;
+; Total pins                  ; 27                                      ;
+; Total virtual pins          ; 0                                       ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                           ;
++-----------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EPM570T144C5       ;                    ;
+; Top-level entity name                                          ; music              ; music_test         ;
+; Family name                                                    ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Perform gate-level register retiming                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ;
++----------------------------------+-----------------+------------------------+------------------------------+
+; music.v                          ; yes             ; User Verilog HDL File  ; D:/shapaOuO/music/music.v    ;
+; autoPlay.v                       ; yes             ; User Verilog HDL File  ; D:/shapaOuO/music/autoPlay.v ;
+; table.v                          ; yes             ; User Verilog HDL File  ; D:/shapaOuO/music/table.v    ;
+; toneOut.v                        ; yes             ; User Verilog HDL File  ; D:/shapaOuO/music/toneOut.v  ;
++----------------------------------+-----------------+------------------------+------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Total logic elements                        ; 525     ;
+;     -- Combinational with no register       ; 386     ;
+;     -- Register only                        ; 37      ;
+;     -- Combinational with a register        ; 102     ;
+;                                             ;         ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 290     ;
+;     -- 3 input functions                    ; 85      ;
+;     -- 2 input functions                    ; 102     ;
+;     -- 1 input functions                    ; 11      ;
+;     -- 0 input functions                    ; 0       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 451     ;
+;     -- arithmetic mode                      ; 74      ;
+;     -- qfbk mode                            ; 0       ;
+;     -- register cascade mode                ; 0       ;
+;     -- synchronous clear/load mode          ; 16      ;
+;     -- asynchronous clear/load mode         ; 64      ;
+;                                             ;         ;
+; Total registers                             ; 139     ;
+; Total logic cells in carry chains           ; 81      ;
+; I/O pins                                    ; 27      ;
+; Maximum fan-out node                        ; Mode.11 ;
+; Maximum fan-out                             ; 69      ;
+; Total fan-out                               ; 1962    ;
+; Average fan-out                             ; 3.55    ;
++---------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name      ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------+--------------+
+; |music                     ; 525 (387)   ; 139          ; 0          ; 27   ; 0            ; 386 (302)    ; 37 (18)           ; 102 (67)         ; 81 (31)         ; 0 (0)      ; |music                   ; work         ;
+;    |autoPlay:play|         ; 88 (88)     ; 32           ; 0          ; 0    ; 0            ; 56 (56)      ; 16 (16)           ; 16 (16)          ; 30 (30)         ; 0 (0)      ; |music|autoPlay:play     ; work         ;
+;    |toneOut:speeker|       ; 38 (38)     ; 22           ; 0          ; 0    ; 0            ; 16 (16)      ; 3 (3)             ; 19 (19)          ; 20 (20)         ; 0 (0)      ; |music|toneOut:speeker   ; work         ;
+;    |toneTable:toneOut|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |music|toneTable:toneOut ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |music|mode                                                                                                                                           ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; Name      ; mode.1100 ; mode.1011 ; mode.1010 ; mode.1001 ; mode.1000 ; mode.0111 ; mode.0110 ; mode.0101 ; mode.0100 ; mode.0011 ; mode.0010 ; mode.0001 ; mode.0000 ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; mode.0000 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ;
+; mode.0001 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1         ;
+; mode.0010 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 1         ;
+; mode.0011 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 1         ;
+; mode.0100 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 1         ;
+; mode.0101 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.0110 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.0111 ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.1000 ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.1001 ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.1010 ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.1011 ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; mode.1100 ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------+
+; State Machine - |music|Mode                     ;
++---------+---------+---------+---------+---------+
+; Name    ; Mode.11 ; Mode.10 ; Mode.01 ; Mode.00 ;
++---------+---------+---------+---------+---------+
+; Mode.00 ; 0       ; 0       ; 0       ; 0       ;
+; Mode.01 ; 0       ; 0       ; 1       ; 1       ;
+; Mode.10 ; 0       ; 1       ; 0       ; 1       ;
+; Mode.11 ; 1       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; segoutLED[0]$latch                                 ; segoutLED[5]~457    ; yes                    ;
+; segoutLED[1]$latch                                 ; segoutLED[5]~457    ; yes                    ;
+; segoutLED[2]$latch                                 ; segoutLED[5]~457    ; yes                    ;
+; segoutLED[3]$latch                                 ; segoutLED[5]~457    ; yes                    ;
+; segoutLED[4]$latch                                 ; segoutLED[5]~457    ; yes                    ;
+; segoutLED[5]$latch                                 ; segoutLED[5]~457    ; yes                    ;
+; segoutLED[6]$latch                                 ; segoutLED[7]~443    ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++----------------------------------------+---------------------+
+; Register name                          ; Reason for Removal  ;
++----------------------------------------+---------------------+
+; q[0][6]                                ; Merged with q[0][7] ;
+; q[0][5]                                ; Merged with q[0][7] ;
+; q[0][3]                                ; Merged with q[0][4] ;
+; q[0][1]                                ; Merged with q[0][2] ;
+; q[0][0]                                ; Merged with q[0][2] ;
+; q[1][6]                                ; Merged with q[1][7] ;
+; q[1][3]                                ; Merged with q[1][4] ;
+; q[1][0]                                ; Merged with q[1][1] ;
+; q[2][6]                                ; Merged with q[2][7] ;
+; q[2][3]                                ; Merged with q[2][4] ;
+; q[2][0]                                ; Merged with q[2][1] ;
+; q[3][6]                                ; Merged with q[3][7] ;
+; q[3][3]                                ; Merged with q[3][4] ;
+; q[3][0]                                ; Merged with q[3][1] ;
+; q[4][6]                                ; Merged with q[4][7] ;
+; q[4][5]                                ; Merged with q[4][7] ;
+; q[4][3]                                ; Merged with q[4][4] ;
+; q[4][1]                                ; Merged with q[4][2] ;
+; q[4][0]                                ; Merged with q[4][2] ;
+; q[5][6]                                ; Merged with q[5][7] ;
+; q[5][3]                                ; Merged with q[5][4] ;
+; q[5][0]                                ; Merged with q[5][1] ;
+; q[6][6]                                ; Merged with q[6][7] ;
+; q[6][3]                                ; Merged with q[6][4] ;
+; q[6][0]                                ; Merged with q[6][1] ;
+; q[7][6]                                ; Merged with q[7][7] ;
+; q[7][5]                                ; Merged with q[7][7] ;
+; q[7][3]                                ; Merged with q[7][4] ;
+; q[7][1]                                ; Merged with q[7][2] ;
+; q[7][0]                                ; Merged with q[7][2] ;
+; mode~2265                              ; Lost fanout         ;
+; mode~2266                              ; Lost fanout         ;
+; mode~2267                              ; Lost fanout         ;
+; mode~2268                              ; Lost fanout         ;
+; Mode~532                               ; Lost fanout         ;
+; Mode~533                               ; Lost fanout         ;
+; Total Number of Removed Registers = 36 ;                     ;
++----------------------------------------+---------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 139   ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 64    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 55    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; q[3][1]                                 ; 1       ;
+; q[5][1]                                 ; 1       ;
+; q[1][1]                                 ; 1       ;
+; q[7][2]                                 ; 3       ;
+; q[2][1]                                 ; 1       ;
+; q[0][2]                                 ; 1       ;
+; q[4][2]                                 ; 1       ;
+; q[6][1]                                 ; 1       ;
+; q[2][2]                                 ; 1       ;
+; q[3][2]                                 ; 1       ;
+; q[5][2]                                 ; 1       ;
+; q[1][2]                                 ; 1       ;
+; q[6][2]                                 ; 1       ;
+; q[5][4]                                 ; 1       ;
+; q[6][4]                                 ; 1       ;
+; q[4][4]                                 ; 1       ;
+; q[7][4]                                 ; 1       ;
+; q[1][4]                                 ; 1       ;
+; q[2][4]                                 ; 1       ;
+; q[0][4]                                 ; 1       ;
+; q[3][4]                                 ; 1       ;
+; q[3][5]                                 ; 1       ;
+; q[5][5]                                 ; 1       ;
+; q[1][5]                                 ; 1       ;
+; q[7][7]                                 ; 2       ;
+; q[2][5]                                 ; 1       ;
+; q[0][7]                                 ; 1       ;
+; q[4][7]                                 ; 1       ;
+; q[6][5]                                 ; 1       ;
+; q[2][7]                                 ; 1       ;
+; q[3][7]                                 ; 1       ;
+; q[5][7]                                 ; 1       ;
+; q[1][7]                                 ; 1       ;
+; q[6][7]                                 ; 1       ;
+; Total number of inverted registers = 34 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 20:1               ; 5 bits    ; 65 LEs        ; 0 LEs                ; 65 LEs                 ; Yes        ; |music|score[2]            ;
+; 39:1               ; 18 bits   ; 468 LEs       ; 432 LEs              ; 36 LEs                 ; Yes        ; |music|q[2][4]             ;
+; 40:1               ; 4 bits    ; 104 LEs       ; 96 LEs               ; 8 LEs                  ; Yes        ; |music|q[3][1]             ;
+; 41:1               ; 4 bits    ; 108 LEs       ; 96 LEs               ; 12 LEs                 ; Yes        ; |music|q[4][2]             ;
+; 42:1               ; 4 bits    ; 112 LEs       ; 88 LEs               ; 24 LEs                 ; Yes        ; |music|q[6][5]             ;
+; 43:1               ; 3 bits    ; 84 LEs        ; 66 LEs               ; 18 LEs                 ; Yes        ; |music|q[6][1]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |music|segoutLED[4]~455    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |music|Mux1                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |music|segoutLED[4]~264    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |music|segoutLED[3]~286    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |music|segoutLED[1]~351    ;
+; 39:1               ; 9 bits    ; 234 LEs       ; 171 LEs              ; 63 LEs                 ; No         ; |music|mode~449            ;
+; 39:1               ; 2 bits    ; 52 LEs        ; 4 LEs                ; 48 LEs                 ; No         ; |music|Mode~169            ;
+; 53:1               ; 2 bits    ; 70 LEs        ; 4 LEs                ; 66 LEs                 ; No         ; |music|Mode~168            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Thu Jan 06 09:51:02 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off music_test -c music_test
+Info: Found 1 design units, including 1 entities, in source file music.v
+    Info: Found entity 1: music
+Info: Found 1 design units, including 1 entities, in source file autoPlay.v
+    Info: Found entity 1: autoPlay
+Info: Found 1 design units, including 1 entities, in source file table.v
+    Info: Found entity 1: toneTable
+Info: Found 1 design units, including 1 entities, in source file toneOut.v
+    Info: Found entity 1: toneOut
+Info: Elaborating entity "music" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at music.v(40): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at music.v(161): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(175): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(189): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(203): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(217): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(231): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(249): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(263): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(277): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(291): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(305): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(341): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(355): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(369): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(383): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(397): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(411): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(429): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(443): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(457): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(471): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(485): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(521): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(535): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(549): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(567): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(581): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(595): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(609): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(623): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(659): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(673): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(687): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(701): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at music.v(715): truncated value with size 32 to match size of target (5)
+Warning (10240): Verilog HDL Always Construct warning at music.v(49): inferring latch(es) for variable "cnt_num", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at music.v(747): truncated value with size 32 to match size of target (2)
+Warning (10235): Verilog HDL Always Construct warning at music.v(750): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(750): variable "scoreTarget" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(761): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(764): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(767): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(770): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(773): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(776): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(779): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(782): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(785): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(788): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(791): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(794): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(797): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(800): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(803): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(806): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(809): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(812): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(815): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(818): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at music.v(821): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at music.v(749): inferring latch(es) for variable "segoutLED", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "segoutLED[0]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[1]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[2]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[3]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[4]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[5]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[6]" at music.v(824)
+Info (10041): Inferred latch for "segoutLED[7]" at music.v(824)
+Info (10041): Inferred latch for "cnt_num[0]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[1]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[2]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[3]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[4]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[5]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[6]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[7]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[8]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[9]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[10]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[11]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[12]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[13]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[14]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[15]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[16]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[17]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[18]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[19]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[20]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[21]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[22]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[23]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[24]" at music.v(49)
+Info (10041): Inferred latch for "cnt_num[25]" at music.v(49)
+Info: Elaborating entity "autoPlay" for hierarchy "autoPlay:play"
+Warning (10230): Verilog HDL assignment warning at autoPlay.v(16): truncated value with size 32 to match size of target (17)
+Warning (10230): Verilog HDL assignment warning at autoPlay.v(25): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at autoPlay.v(33): truncated value with size 32 to match size of target (8)
+Info: Elaborating entity "toneTable" for hierarchy "toneTable:toneOut"
+Info: Elaborating entity "toneOut" for hierarchy "toneOut:speeker"
+Warning (10230): Verilog HDL assignment warning at toneOut.v(11): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at toneOut.v(24): truncated value with size 32 to match size of target (15)
+Warning (12010): Port "ordered port 1" on the entity instantiation of "speeker" is connected to a signal of width 13. The formal width of the signal in the module is 15.  The extra bits will be driven by GND.
+Warning (12030): Port "ordered port 1" on the entity instantiation of "toneOut" is connected to a signal of width 13. The formal width of the signal in the module is 15.  The extra bits will be left dangling without any fan-out logic.
+Warning: Latch segoutLED[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal score[4]
+Warning: Latch segoutLED[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal score[4]
+Warning: Latch segoutLED[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal scanoutLED[1]~reg0
+Warning: Latch segoutLED[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal scanoutLED[1]~reg0
+Warning: Latch segoutLED[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal scanoutLED[1]~reg0
+Warning: Latch segoutLED[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal score[4]
+Warning: Latch segoutLED[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal scanoutLED[1]~reg0
+    Warning: Ports ENA and PRE on the latch are fed by the same signal score[4]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "segoutLED[7]" is stuck at VCC
+Info: Registers with preset signals will power-up high
+Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
+    Info: Register "mode~2265" lost all its fanouts during netlist optimizations.
+    Info: Register "mode~2266" lost all its fanouts during netlist optimizations.
+    Info: Register "mode~2267" lost all its fanouts during netlist optimizations.
+    Info: Register "mode~2268" lost all its fanouts during netlist optimizations.
+    Info: Register "Mode~532" lost all its fanouts during netlist optimizations.
+    Info: Register "Mode~533" lost all its fanouts during netlist optimizations.
+Info: Implemented 552 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 22 output pins
+    Info: Implemented 525 logic cells
+Warning: Ignored assignments for entity "music_test" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -entity music_test -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity music_test -section_id "Root Region" is ignored
+Info: Generated suppressed messages file D:/shapaOuO/music/music_test.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 89 warnings
+    Info: Peak virtual memory: 251 megabytes
+    Info: Processing ended: Thu Jan 06 09:51:05 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/shapaOuO/music/music_test.map.smsg.
+
+

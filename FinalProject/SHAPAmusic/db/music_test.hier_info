@@ -1,0 +1,124 @@
+|music
+clk => clk~0.IN2
+reset => reset~0.IN1
+buzz <= toneOut:speeker.port2
+left => score~4.OUTPUTSELECT
+left => score~3.OUTPUTSELECT
+left => score~2.OUTPUTSELECT
+left => score~1.OUTPUTSELECT
+left => score~0.OUTPUTSELECT
+center => score~9.OUTPUTSELECT
+center => score~8.OUTPUTSELECT
+center => score~7.OUTPUTSELECT
+center => score~6.OUTPUTSELECT
+center => score~5.OUTPUTSELECT
+right => score~14.OUTPUTSELECT
+right => score~13.OUTPUTSELECT
+right => score~12.OUTPUTSELECT
+right => score~11.OUTPUTSELECT
+right => score~10.OUTPUTSELECT
+segout[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+segout[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+segout[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segout[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segout[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segout[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segout[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segout[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+scanout[0] <= cnt_scan[13].DB_MAX_OUTPUT_PORT_TYPE
+scanout[1] <= cnt_scan[14].DB_MAX_OUTPUT_PORT_TYPE
+scanout[2] <= cnt_scan[15].DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[0] <= segoutLED[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[1] <= segoutLED[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[2] <= segoutLED[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[3] <= segoutLED[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[4] <= segoutLED[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[5] <= segoutLED[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[6] <= segoutLED[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segoutLED[7] <= <VCC>
+scanoutLED[0] <= scanoutLED[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanoutLED[1] <= scanoutLED[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|music|autoPlay:play
+reset => count[7].ACLR
+reset => count[6].ACLR
+reset => count[5].ACLR
+reset => count[4].ACLR
+reset => count[3].ACLR
+reset => count[2].ACLR
+reset => count[1].ACLR
+reset => count[0].ACLR
+clk => clkCount[16].CLK
+clk => clkCount[15].CLK
+clk => clkCount[14].CLK
+clk => clkCount[13].CLK
+clk => clkCount[12].CLK
+clk => clkCount[11].CLK
+clk => clkCount[10].CLK
+clk => clkCount[9].CLK
+clk => clkCount[8].CLK
+clk => clkCount[7].CLK
+clk => clkCount[6].CLK
+clk => clkCount[5].CLK
+clk => clkCount[4].CLK
+clk => clkCount[3].CLK
+clk => clkCount[2].CLK
+clk => clkCount[1].CLK
+clk => clkCount[0].CLK
+clk => clk1.CLK
+autoPlayIndex[0] <= Ram0.DATAOUT
+autoPlayIndex[1] <= Ram0.DATAOUT1
+autoPlayIndex[2] <= Ram0.DATAOUT2
+autoPlayIndex[3] <= Ram0.DATAOUT3
+autoPlayIndex[4] <= Ram0.DATAOUT4
+
+
+|music|toneTable:toneOut
+autoPlayIndex[0] => Decoder0.IN4
+autoPlayIndex[1] => Decoder0.IN3
+autoPlayIndex[2] => Decoder0.IN2
+autoPlayIndex[3] => Decoder0.IN1
+autoPlayIndex[4] => Decoder0.IN0
+tone[0] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+tone[1] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+tone[2] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+tone[3] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+tone[4] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+tone[5] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+tone[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+tone[7] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+tone[8] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+tone[9] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+tone[10] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+tone[11] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+tone[12] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+tone[13] <= tone~0.DB_MAX_OUTPUT_PORT_TYPE
+tone[14] <= <GND>
+
+
+|music|toneOut:speeker
+clk => clkCount[4].CLK
+clk => clkCount[3].CLK
+clk => clkCount[2].CLK
+clk => clkCount[1].CLK
+clk => clkCount[0].CLK
+clk => clk1.CLK
+toneIn[0] => Equal1.IN14
+toneIn[1] => Equal1.IN13
+toneIn[2] => Equal1.IN12
+toneIn[3] => Equal1.IN11
+toneIn[4] => Equal1.IN10
+toneIn[5] => Equal1.IN9
+toneIn[6] => Equal1.IN8
+toneIn[7] => Equal1.IN7
+toneIn[8] => Equal1.IN6
+toneIn[9] => Equal1.IN5
+toneIn[10] => Equal1.IN4
+toneIn[11] => Equal1.IN3
+toneIn[12] => Equal1.IN2
+toneIn[13] => Equal1.IN1
+toneIn[14] => Equal1.IN0
+buzzOut <= buzzOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
