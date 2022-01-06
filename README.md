@@ -15,7 +15,12 @@
 
 #### FinalProject
 
-* 
+* SHAPAmusic
+    * 蝦趴的小星星節奏遊戲
+    * 線條掉落至最下方時按壓對應按鈕可獲得分數
+    * 七節碼計分(0~20) 計分滿20後獲勝:D
+    * 蜂鳴器唱小星星
+    * [demo shapa](https://www.youtube.com/watch?v=jfKUwRfmYDc&list=PLCi3TnWyxjDTBKp2c8hVEM4VWan5wM6xa&index=5) 
 
 #### Homework
 
